@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "energyfl"
+version = "0.1.0"
+description = "Federated household forecasting research simulator"
+requires-python = ">=3.10"
+dependencies = ["numpy==2.2.6", "pandas==2.2.3", "torch==2.8.0", "truststore==0.10.5"]
+[tool.setuptools.packages.find]
+include = ["energyfl*"]

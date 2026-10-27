@@ -1,0 +1,76 @@
+{
+  "seed": 7,
+  "data": "data/processed/smoke",
+  "model": {
+    "kind": "gru",
+    "hidden": 16
+  },
+  "train": {
+    "method": "federated",
+    "device": "cpu",
+    "threads": 2,
+    "rounds": 3,
+    "local_steps": 2,
+    "batch_size": 16,
+    "lr": 0.001,
+    "clients_per_round": 4,
+    "scheduler": "coverage",
+    "weighting": "equal",
+    "eval_every": 1
+  },
+  "simulation": {
+    "availability": 1.0,
+    "dropout": 0.1,
+    "min_survivors": 2,
+    "deadline_s": 60.0,
+    "reference_step_s": 0.03355872000101954,
+    "calibration_source": "D:\\AIEproject\\MAIE5532_MLS\\final\\reports\\calibration_smoke\\profile.json",
+    "coverage_fraction": 0.25,
+    "aggregation": "plain",
+    "profiles": [
+      {
+        "name": "constrained",
+        "speed": 0.25,
+        "ram_mb": 128,
+        "mbps": 0.5,
+        "latency_ms": 100,
+        "energy_budget": 1000.0,
+        "inference_deadline_ms": 100
+      },
+      {
+        "name": "intermediate",
+        "speed": 0.5,
+        "ram_mb": 512,
+        "mbps": 5,
+        "latency_ms": 50,
+        "energy_budget": 1000.0,
+        "inference_deadline_ms": 50
+      },
+      {
+        "name": "capable",
+        "speed": 1.0,
+        "ram_mb": 2048,
+        "mbps": 20,
+        "latency_ms": 10,
+        "energy_budget": 1000.0,
+        "inference_deadline_ms": 20
+      }
+    ],
+    "calibration": {
+      "report_path": "D:\\AIEproject\\MAIE5532_MLS\\final\\reports\\calibration_smoke\\profile.json",
+      "report_sha256": "7c42338539438f9d8f588149cf141741227b96a78c9bd7492e5f5558d118952a",
+      "workload_fingerprint": "27e03ad95b463f0ff733f9f6d2dd5a93f2c71c6128bff66f76f3a6d25be0a57f",
+      "base_config_fingerprint": "0c8c6ceb2b1b117f2b8d0314613d8b1a14eaa5e7c52a930745f5862c5177eb18",
+      "statistic": "median_of_measured_local_step_times"
+    }
+  },
+  "privacy": {
+    "enabled": false,
+    "clip_norm": 1.0,
+    "noise_multiplier": 8.0,
+    "delta": 1e-05,
+    "epsilon_cap": 8.0,
+    "deterministic_noise": false,
+    "clip_updates": true
+  }
+}
