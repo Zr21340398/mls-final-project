@@ -1,0 +1,836 @@
+{
+  "schema": 1,
+  "source": "https://data.london.gov.uk/dataset/smartmeter-energy-consumption-data-in-london-households-vqm0d",
+  "synthetic": false,
+  "inputs": [
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_0.csv",
+      "sha256": "4997141df1efb62488305936c3d2aee395c456f475542bfbdcd5a2145479bd61"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_1.csv",
+      "sha256": "e2d9a8b89289edc7c6a25290b90635ac744cef347b7e0164f8c4bc2b8c0b55bd"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_10.csv",
+      "sha256": "b331bd5d216d02d0a17e2fef63ad7c14a84170dc0cb8be0c661acfcd66b1c844"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_100.csv",
+      "sha256": "3b27bcb63aca48dcd97b520930b8c3c7c8d6f5f76bf1da66f7050e350f2f2dd0"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_101.csv",
+      "sha256": "301d4070e9409924d4283300a2c16c1dee18e9450e3fcaa437926f486580aead"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_102.csv",
+      "sha256": "e266174e084b5719d94689b7ab5d95e07527eb469c7badbf1b2bdda7bd72638d"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_103.csv",
+      "sha256": "9c0d1a436e03f04a1b4629c9537916233bc27320a09e2fca0b1db7ebe4f90fa8"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_104.csv",
+      "sha256": "75ba54218d0646710e9de8c01fe8d1853aed19713b8f3f1af5fedeb1f70528ed"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_105.csv",
+      "sha256": "1587e36dc4cb51eb3614e397fa991d112c21d51a2121b53586b98371b4621c07"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_106.csv",
+      "sha256": "3cf71caada3b91373d406bf8c1c3eb770546775e99b9ae9e3fb1d6fddd0ccd94"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_107.csv",
+      "sha256": "e12c8e56219a2473dc1cfd173f27f07c1526e1399e33343ceb6bd44f865ad507"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_108.csv",
+      "sha256": "fae93d99e4ad41a456f8307f34b14073aa3da9450c5b6d9a6afed35bbb583c41"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_109.csv",
+      "sha256": "bc6e42bfa130ac573b6ab663df5d30226f5a4bf172fd18921680eec7527e7fce"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_11.csv",
+      "sha256": "cdcac7e23a253aeeec61c45271b2ad15eced5a067a82647aa1cc521f8cd498f2"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_110.csv",
+      "sha256": "d613640e01a51a0cc9ace46bb6edbc5fd1fcf4aa0dc771200a4b1a90ef0f312c"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_111.csv",
+      "sha256": "da73121775305b1c0d99613160bf5936111837cbf3b99f65879529479489938d"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_112.csv",
+      "sha256": "82af5f19713d468775a961b9e01b64fd06d0ef75066fde7d331481444489da01"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_113.csv",
+      "sha256": "624a2871c338a9bca41c6311ef2f2ef608ce6a1ddd69327d4a56684ecc5fc458"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_114.csv",
+      "sha256": "89acededaa1391471b04c740a227b839d4dc558ca5929b485170b1451aaa1170"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_115.csv",
+      "sha256": "d3ffd64cafd8d0c3bad8e92813289ea18361c55a0fa00e3bcd26625dc7a05a72"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_116.csv",
+      "sha256": "24d00e7e7f9723e14745fd64842a9d06a11e5ce557656f5ae918a8519b95e704"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_117.csv",
+      "sha256": "67215d044173b70be7712bca1de59ef5ab41a738d1d3c3a1fb46a47b6eb6bc7e"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_118.csv",
+      "sha256": "f22bb6fe69919e32459ca68da047532139464bba299e21fd32b26b75b042daa5"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_119.csv",
+      "sha256": "c387083b881ee450b11adcf6b320f639b08445365aa1004ed24a0b68ea4b9bb1"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_12.csv",
+      "sha256": "538d29ee4dc1d6bcb3b68efeee990bf7c2a9bbfdb75bb62757c7d644684175cb"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_120.csv",
+      "sha256": "aeab62d4ba15d460064369b39b25dd9f39bffbdc9fe677e21ef33ed3a85203ae"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_121.csv",
+      "sha256": "ab48d6d87817248834cdab567ff9467680f5d967dd6ab4eee64f8f2ebbedc22a"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_122.csv",
+      "sha256": "c35640eef7fac8241b8a415a72a2d24903841e933d5b24f651d88b85a5f5c43c"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_123.csv",
+      "sha256": "9942212b95286ef48d5c1b586ee5a4a85614e8f314502c601ae1b4beb632a84e"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_124.csv",
+      "sha256": "5a67f75c5b1191cde7a9c6a1742ebc16711231e0a79398d49165dc982ad590be"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_125.csv",
+      "sha256": "7396f2341357244597225d728418e3a774801343ebfb63e2ba9d7c846d1c50ca"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_126.csv",
+      "sha256": "9d4b16c5c7599627e1761fd720039b763964093c2927b0fb146748099d9b7c15"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_127.csv",
+      "sha256": "bb2ecc5d2b98e715839075cb9110fb765b9364ad4f35c9006718499facdd6e10"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_128.csv",
+      "sha256": "66025f7aaa41782879487b5f85007e54ea0a4a9bf0043839b3ea56d56741ba6a"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_129.csv",
+      "sha256": "4ff63ab8891e26f6e4b2f00f508f83c6ce7745991f3aac0d03ca5e13261a3281"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_13.csv",
+      "sha256": "22afea449d9f670bf368841ca229315642aabec060feff804afa471c5f7401d3"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_130.csv",
+      "sha256": "adc0d6f0acc645d1d789504089570ee19bfaa101146e431a29eba9849ef3f220"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_131.csv",
+      "sha256": "308887ae868fd9095844c78ffa57b8a79ec320b357ce43f0916733e236d4d3b6"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_132.csv",
+      "sha256": "ed2fd198a57bcb00e4d231c0da4c251fb374e5de88928d5e3253aaf0d5cd36a9"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_133.csv",
+      "sha256": "97fced5430fa14e0cb8ae05ae155d810c52b3d882dfd666ff6db69d4c49de9bd"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_134.csv",
+      "sha256": "bdb85d3ed8dafb94a09d6d2e67bb08d802570d64d9acc505d8016b1bf218ef02"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_135.csv",
+      "sha256": "9c18c4f2ceb58a0dcc863f506cae3bf848f382a0e6a6020e6fbc80408a920f63"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_136.csv",
+      "sha256": "f9d7a3e3dcdfa603bb64bacb1bbdb2e22939e5d34c5fb7523ddc128b76ba79b8"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_137.csv",
+      "sha256": "78c5b1d59a473bcadad736805ca9c88c553dbbfddef9ce9a26365207ef40d4ec"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_138.csv",
+      "sha256": "03349532de7ac6f0d2a7857f056db2641e35fe7cdcc368433719b3d0aba19312"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_139.csv",
+      "sha256": "3a8d67d89cd37f9a07ee407d8cafa9b2fc11016ff5c2bd9c7a083821172faa7a"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_14.csv",
+      "sha256": "b2b2f8762a069bee825f14b56593ad6989e2c2f38dab406addaed907e73bb31b"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_140.csv",
+      "sha256": "73af593201cce829295fdbbfec998a46dc9c86c05de15b9b0c94eed7859c6959"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_141.csv",
+      "sha256": "595957f9bc70e4640c1d0b7568982af059c9d1332641a8433f9f79ecb78bb77a"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_142.csv",
+      "sha256": "85fbc2cc2ba7d8b2b888c3042df4d4718aa263814707f81841bb2a98f7b490cd"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_143.csv",
+      "sha256": "6e45bafb58a8b439f4a42041573a13bc35a0461f7d7201c3ceb5214a2e301af1"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_144.csv",
+      "sha256": "d0ebb59dd1c84f2913badf437e5a6963892004c330f1395084c3f1f3a7882f85"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_145.csv",
+      "sha256": "e65c7c4abf339446d98cdb3e76e62d3861f51e27a1c978970f5cc6325cd0bdfe"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_146.csv",
+      "sha256": "b36ef685a486eb246e539fce1f77d468d851194c2dcd803c6fc6e6873f024b73"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_147.csv",
+      "sha256": "14e45cac6cf607478e60bc6695e3463de28f7550ee3275dd320681d2a6bb3de0"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_148.csv",
+      "sha256": "1622f0246d9793362a1898e3f0336473f9996a55e33380a8e422d3f61418c686"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_149.csv",
+      "sha256": "00c0ec3f369f34d69841a7a774264cc7eefea2a5386201a814fa436fc2cd0c05"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_15.csv",
+      "sha256": "ced0ff5d484a91753f344de13c42d91913aad22f8d2e42a543912a2c2e56d33f"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_150.csv",
+      "sha256": "74fe2907c34769c49d831e3ce320c39185886295e2861b244d041ecd9b13028e"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_151.csv",
+      "sha256": "5b7772b4166bd383fd42adead01dbf8693bbb9041256795a12356c1bdf8969d8"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_152.csv",
+      "sha256": "f4f5684c7922bf170c77dd784afa81bc4be62edc9e0362f21e1df781af836a0f"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_153.csv",
+      "sha256": "f9b6cfa126a8ed7c739226f96072a72f3e0436094af4494fc1fb10ffeea17a29"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_154.csv",
+      "sha256": "2fcc1c039de9c87005b2f4b438e0a419881b88165c72169cc7def123a58c9a80"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_155.csv",
+      "sha256": "09eca9df114de21020c0a72825de446fcecc5ecaad740f58d40c54a4f8e8a003"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_156.csv",
+      "sha256": "24090b16639939040728a12a01edea8a4b0f5e15bf04f4edb6c3be4632a9f86b"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_157.csv",
+      "sha256": "02285ba9496e57f80d7e778e217ab9cbe9bb743b54006f7e11a3084d106926e6"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_158.csv",
+      "sha256": "919179475de04044b9393f67f3e3223db084ca56c2db5c5f96e83085c00a0afb"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_159.csv",
+      "sha256": "574545ca7b80826e1374f9f36adef30d45a051cd32df40713359ec14da9e634b"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_16.csv",
+      "sha256": "2684e9d77efdf0a86be50cc94a4afffb7fb1f668e9ff031356cbfa0b37a2a4b9"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_160.csv",
+      "sha256": "68e050de7bb5527b2fdea09603c00c5f3b15a8f3c1795a07959df8dd7b24d7ea"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_161.csv",
+      "sha256": "4c10d063c09aa5ef63f378c9cc573f57c976053853213942f5cb671e652a5459"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_162.csv",
+      "sha256": "b4a159b28638e85caf09c7f46ccdc27dafa526402b9d7e188224db2edd040486"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_163.csv",
+      "sha256": "3385a1ab0a9498368aae83a21686768809622e2f1815cf3503f4d259a494a5d1"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_164.csv",
+      "sha256": "1a14d43bc453465b957774b3b6956572312586968fb59bfd4562d7e2587f992e"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_165.csv",
+      "sha256": "7f923ebf4a40fe3e5cf5c989f75b0ad8f09df320b995c6b4b9851d6b44752837"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_166.csv",
+      "sha256": "9878912ca395a020b4f85720b4792d295ae04215d2f813b276fa14cdce60a4bf"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_167.csv",
+      "sha256": "6b4b951f1ab95a9846b37d462eadc619c9fbf479bf350c8941adf8694e34ee51"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_17.csv",
+      "sha256": "a807c6c3b35490b53caa851f51ea85db7963c1dd90879104caf2dc935961d364"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_18.csv",
+      "sha256": "8e79b2a10e9d24b95c5168112ed7b2549dc8a6588045db842e405f83ec421e78"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_19.csv",
+      "sha256": "ee00ab1913579dc371a06a4c24bf6ccd15d209eb545cced1d261dabc3095748f"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_2.csv",
+      "sha256": "07516831f44ff2cc0a1647d3e9cfcbac92415890d3666cdc0d658bcef73a14b9"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_20.csv",
+      "sha256": "50d7c654b32f197c6b4a745e4b69f47dadf355e521ada67f3730458b0d4cf1c8"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_21.csv",
+      "sha256": "e4a9b6b51c70dca5574b52ed7dd984f92503e09073e9630e33fddf343ea47fe2"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_22.csv",
+      "sha256": "32e92ff71011b68427d4fcf440a5db3f1f701bf00ee72871cb88bcaa4250d84a"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_23.csv",
+      "sha256": "fc791b23b0b8d9ef2cca0d584e3f2bdfeb11db1645f6dfece9b954972641102a"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_24.csv",
+      "sha256": "fcf0c24fc37d96c25486da78ddadc54de168d69e6a3b80782d82782bb04b89d7"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_25.csv",
+      "sha256": "0e53bf79eae8432b0700f641565c85bd8c947e9430f20e07d59b1b60de48bd2c"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_26.csv",
+      "sha256": "b8e6e12fc6be9f6b4d1a3a29d7fff1bc591a3fffed6e08a49e1bd65dad5d46b3"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_27.csv",
+      "sha256": "525a33129b0c04242a31c24e84935d3a2a235675abc80598a7734aa4fc25708d"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_28.csv",
+      "sha256": "389615adf4dd1463674484f973b4dcc8b17c80abfcae9cec332592cc424d4ae4"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_29.csv",
+      "sha256": "833379b4a731636e746498f3333638eb776c60959518f10fff1bea2fb9a48df5"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_3.csv",
+      "sha256": "75c7d9c67a93f1e3b462e7300de22e83631fde009e170db9025923ba72cfd581"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_30.csv",
+      "sha256": "10555358ed52d52017b4a877ecff80c2efc64f5c127ad65366744dc62b42e909"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_31.csv",
+      "sha256": "95638c553539659637e2d45c23830cfe1c0dfca495a268075723abbeeb256d14"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_32.csv",
+      "sha256": "a7cde8a2cb7df5bf1b16471184a11ae14253e2d182fe0949473ae102ca5539a4"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_33.csv",
+      "sha256": "578c5ac0eaf167c556cf4045f03112475324af4f74751d3deb9d9a7e79c66b26"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_34.csv",
+      "sha256": "794e182bfd80bd8766c286ae2291cc44586a7681e69e145edd9630065820c27d"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_35.csv",
+      "sha256": "d83100722fdc788393056315e3cabde12d86d664a47f41ff876f4c7d9aa01c56"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_36.csv",
+      "sha256": "c7df9a43aab1d4b8f2bab90cd5ca25908a1970b46ca553a26d0f358050dcdf1c"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_37.csv",
+      "sha256": "0ff2ed389a9002455dde46249ffb820d3d0438840af4029682e44cb93ea0a6d5"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_38.csv",
+      "sha256": "e9839ddf5f06a33fbc8817a1a6bcb92cc725e2868b64a65dabc9882c1f9af0e7"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_39.csv",
+      "sha256": "ad0b75a8829ac79b8ba451ee1304897510ca2b6db44af5d72f59d8a36b5165fb"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_4.csv",
+      "sha256": "bae7435ff10f52336341328569af56f963f7625bb9340eb867397249647d9d81"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_40.csv",
+      "sha256": "21e58ee9d8e61cec60f6e9f5b573054b0b011621431bfb21d36fdaf2a7d7970d"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_41.csv",
+      "sha256": "191a1d69d06a63a92a088be7b4654a3be237fd988df51df2408a5594c4e66737"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_42.csv",
+      "sha256": "1262d296315e5635d576c0e26e86920eed6f8d2c622edde99f848a737eb1efc4"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_43.csv",
+      "sha256": "117b48e7919c63d13a9d97b04c4e171c45c17a2f1f67b9fd66d90942cdca87ce"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_44.csv",
+      "sha256": "4a8859c7cde91329100c42d90f515975ef863a7b46e6e3f7fb9ae2b816977927"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_45.csv",
+      "sha256": "1ba37fae00c27da30ba63a03a2a758dadc8766103088767365726aecc8f2708b"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_46.csv",
+      "sha256": "fa5d4cb7cf840982468ba2163ecd57790bac2f38e1faf6e3aa86aeb36831a946"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_47.csv",
+      "sha256": "5a2699fdef3d23d1441187c77f36448eab81ac4ecd3d96a685be3ea5db9bd4ea"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_48.csv",
+      "sha256": "4e634c45138ab854b63a53033c35700ebbbce202dd0fd6a4f0787873d905b0ac"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_49.csv",
+      "sha256": "5eacf424774e1cae170dab86f3e7f2c57c206c648b86ad3e100118f07cd79741"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_5.csv",
+      "sha256": "7a93bc68d9a454533bc290c41bf73e70451543d12cc52decf944c5c8c7ac233d"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_50.csv",
+      "sha256": "1a05084a5d2c1377c4a5a62eca8c743bff7b5af06d35b3a2265817dd9e50bc4d"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_51.csv",
+      "sha256": "d9497e86e1840608335fb3e68536e0dae7133fd731122653955958b1b3744916"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_52.csv",
+      "sha256": "d228692cae6bbfb492c8b403e4fa4137784d06f26d4e9b2458ba2c6fef6e7d64"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_53.csv",
+      "sha256": "078a1b50147b2aa9ddd3dd881d4137d05854ae4b98345d0f9f337a3e2b8bfe14"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_54.csv",
+      "sha256": "c29144c579387ff04c53ea7f58c28b04119ea49894d381d53640609bb984517a"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_55.csv",
+      "sha256": "d08846a960965a6373ce3f3ce9086e45df4ceda5521ce25c0a7b6426978e2cbd"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_56.csv",
+      "sha256": "1171f5fc18c194f436f57c02b36049303bbca1e8a558037cec37388d5942a3a8"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_57.csv",
+      "sha256": "1fdc66fa1966255904e6601ca66a96d4114c29aee8edd4df8d63ceed90ebadc5"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_58.csv",
+      "sha256": "f3e0a5768ff18ae9c72dcdadf3101b8adb2e5cb2a0b65b10a5839ba3116877a4"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_59.csv",
+      "sha256": "3138f639822e9a789a28be3b40d9c44494afa4a3c16f0dc40d51939d5d1bdd8c"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_6.csv",
+      "sha256": "88f1fd5489a4727418c889c7d33bb2f6c6f28548a5ab8d91377f869bc8174c32"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_60.csv",
+      "sha256": "f30ef6dea76ff0df1f13665747647eb2321616458e288e80c7a56213a99cb494"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_61.csv",
+      "sha256": "e2080971712ce5f09015d48f826b6631926cdf0d54769557bfdb73cae93dd14b"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_62.csv",
+      "sha256": "72b1c2bcc5fffec889c5e748b37050ce43d1d036abd8db705ca8c3f12e4daa5b"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_63.csv",
+      "sha256": "05d007a50d094f5da4bc21085cb9392470c0503f689ecfd37be8d9b875f40897"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_64.csv",
+      "sha256": "eefcc8df05800fa0372f9fb1f8760a7fadb96592fe1f92e50cb5ed9b6014d247"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_65.csv",
+      "sha256": "10d92b4ef83bcc2727ffecb72ffba87cc3fcfbdc348a854cb708b2e41ce8f072"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_66.csv",
+      "sha256": "7d7ae6312d99fea23a8336dcbf79d25b557594490b842ae313276c9f12e835f6"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_67.csv",
+      "sha256": "a03b9e4a297678028fc8ca909f9c39ff0f7be80cd1736b4bf53b78ea70baab61"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_68.csv",
+      "sha256": "bc43837234838eea84b78984dca0e3bd4e35fdd63298be027644d71557b93921"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_69.csv",
+      "sha256": "dd084d9efe769bea4f9e86c5dfcd2b9540fd02cecf862c6be4a1e082111c5d35"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_7.csv",
+      "sha256": "0462cc80c7e2f52c4922ab157a9ae7d1274dab23a7ca001cd1e1118e5e6c36a4"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_70.csv",
+      "sha256": "700dcec7790b260d1dec20860b2fdda73068e933bbd5daeba5b60f06b5b81318"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_71.csv",
+      "sha256": "0536576273ff6c0eebe6d205bdf7d1becd549752b041ca640ba8b5be3b934ebd"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_72.csv",
+      "sha256": "5c0f1be59afa9e57d2f23862d961bf5ca49674bda7efd17e1f3736b77495a959"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_73.csv",
+      "sha256": "cd83bf7b0c52aab03624048d2bada9507ff1111fb5e5b224a8fa4d3f0dff3475"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_74.csv",
+      "sha256": "68fbd04f80e3ecef4a18dccbb40b0ba14367315b461f3aa9192a5e6028bb6331"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_75.csv",
+      "sha256": "b9518c7ebffef3cca5d93a5e6261178d2aee2d087579f2edcfd3cbb8e4b3cc61"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_76.csv",
+      "sha256": "f34a425c830406ee07bfa3913bb2898f2178106234c98fba5d8f8342819373c6"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_77.csv",
+      "sha256": "02096112cb8baf37f9272f45c0860f8d5a03b1d870811c79f215e4be2a001897"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_78.csv",
+      "sha256": "11db1f0eee9a0eda2cbc8b723eb52dce0213d3cdbdc5a96f828c6c51ddc99a40"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_79.csv",
+      "sha256": "f828ad4e03687a3c94d60b2fcca611ad722bff04e561a923a244101af8863e42"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_8.csv",
+      "sha256": "da7551ac8a2daae9e1601e93ebffad7b424812c28d081f2e0baf5692d093e85b"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_80.csv",
+      "sha256": "0fcdfe70a778ab63d433b124c99de6f4874e490b2badcef0c5ab456015ef7a79"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_81.csv",
+      "sha256": "78bb72e3e70a6aa15fd755b6d05e8283da80f4b3ee543d025b3749221e1f4fe3"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_82.csv",
+      "sha256": "a73809b69b8f5f54627569d86f829a218a1b54102430a9c63be894e981246cdd"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_83.csv",
+      "sha256": "5f548a91fd3dd379a11674c26813f0d42bae53a5179a93ab26d4aa4ce3fe6a9c"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_84.csv",
+      "sha256": "14730e141e810a7da0e31dbd07391ef9503f5d5533d49d5262b0599cf9947576"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_85.csv",
+      "sha256": "940696fa3e9c646442f47581ddb7e9f73d7bc5706588fcfe6601e9eadb36a244"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_86.csv",
+      "sha256": "b3b0ebd933a02becbe6bdcfb85bf348cd7076849bd1e0f68b288d3a783cb5241"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_87.csv",
+      "sha256": "152b107b3904bcc849ad99b19cdf6122e29969059575fabba297458b3b4b4b2b"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_88.csv",
+      "sha256": "6f3c1c35a5b15e51e2fc077670f80d3a6a348c85a149e221f11ec30946a1a87e"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_89.csv",
+      "sha256": "0b74f566b75fa126e3547f24d6f87bd2c23fc252fd9f93fecfcaf9a38772934e"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_9.csv",
+      "sha256": "33668e96bd1af5b37a09e8fb6e54beebe7f6bb537d2c73d730d11b40a90af5b9"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_90.csv",
+      "sha256": "5ef28bbd84399470c897159f785e64ce0ec49af08ce0d751525bd735d2a3e673"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_91.csv",
+      "sha256": "8540d724f5ab5f21a13456119639475d3d7a7f8a1e7f6a2a274b38707989ef67"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_92.csv",
+      "sha256": "9dd21aeef7aa9bd8688c0c182f7221e6741e0c91a6561c40741afba3a949735b"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_93.csv",
+      "sha256": "89f984509bbbd79e76ceb338afddc0b6c81b02fa759402626f48a0f8b5d86192"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_94.csv",
+      "sha256": "41cb2997af09dbe265d6acb2391e43b597546524f81217640ac443ebb170d921"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_95.csv",
+      "sha256": "f7fc2708ba950515e576a81e701582d6b495f9690ef49a7f5b9998608d3db25c"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_96.csv",
+      "sha256": "d5be14c0c3d9233601a9f225ef22110860eb42727619cc0521c855f72b041eed"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_97.csv",
+      "sha256": "c82d0ae19935db798f04828ee0070d3969eb218291f51da0f3c4068b514dc6c1"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_98.csv",
+      "sha256": "ae8e73c65dfeac70fb77e2bfcbf252f0d9d07229e9b21db0092192c0b08cf074"
+    },
+    {
+      "path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\raw\\lcl\\csv\\LCL-June2015v2_99.csv",
+      "sha256": "d2cf082376150d8942989c5babf935882b25be0b5ec28179afe6f32c94f8b302"
+    }
+  ],
+  "start": "2013-01-01 00:00:00",
+  "end_exclusive": "2013-07-01 00:00:00",
+  "train_end_exclusive": "2013-05-07 16:30:00",
+  "val_end_exclusive": "2013-06-03 20:00:00",
+  "lookback": 96,
+  "horizon": 2,
+  "features": 6,
+  "max_forward_fill": 2,
+  "selection": "training coverage only; no test-based selection",
+  "timezone_policy": "naive source clock; duplicate timestamps averaged",
+  "clients": [
+    {
+      "id": "MAC000002",
+      "file": "client_0000.npz",
+      "sha256": "9c5dcb4441876ad3551290277756558e4008b398cfea66df777e54095af961ee",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000006",
+      "file": "client_0001.npz",
+      "sha256": "a0f51b025281d88621b83fc217a315f9e383c0d32e8ce609218fa2a62c083480",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000008",
+      "file": "client_0002.npz",
+      "sha256": "7d37097c611bd1df5bed755a7aab36eb57a8c55b517a1d83ec2779f4a17a8a8c",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000009",
+      "file": "client_0003.npz",
+      "sha256": "12a3c528fbebba546386806b86873547d8b2d7a43c7299967b14c11965f763da",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1197
+      }
+    },
+    {
+      "id": "MAC000010",
+      "file": "client_0004.npz",
+      "sha256": "a32a1873a7ae0dbf8f39ca1a4e7842377367ea41368900a576de84a8be3f54d1",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000011",
+      "file": "client_0005.npz",
+      "sha256": "4af38229cb167fac66fefe45be966c3ba99b8063c5f6e1ae3be6d4655e48006f",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000013",
+      "file": "client_0006.npz",
+      "sha256": "a061680331ecbaf962932837cad053739b80b01beb660e4696f352c9dd6ce620",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000018",
+      "file": "client_0007.npz",
+      "sha256": "1f3181606e4f4deb04ea02b575b265f8cdc32563ba44cafef525399d6fce9ed4",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000019",
+      "file": "client_0008.npz",
+      "sha256": "11da75a1b3408080ef2a513ee3e6307f76651dee3fdade4bcd473f84877d1e0c",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000021",
+      "file": "client_0009.npz",
+      "sha256": "fa888fdf43bbd61fe71f14054d773801f04d3f437489bedbc3f787f023279f4d",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000027",
+      "file": "client_0010.npz",
+      "sha256": "b68d0d02406a28dc6b45497a144d4329d36b7abdf848097fe426e3e02028f272",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000029",
+      "file": "client_0011.npz",
+      "sha256": "5bdb886a8e3657df00a83ba606a0102d033e555e3af0bc0b17d55c2c7ff9086b",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    }
+  ],
+  "fingerprint": "a7347b5bd0af6f4c536c84274f9e273454c4d6d380eefc6aa32864480a4ad54c"
+}

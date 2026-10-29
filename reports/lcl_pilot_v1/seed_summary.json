@@ -1,0 +1,11 @@
+[
+  {
+    "group": "f2d4a4d14f4b87fc",
+    "n_seeds": 1,
+    "seeds": [
+      7
+    ],
+    "test_mae_mean": 0.13726109236552297,
+    "test_mae_std": null
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-10-28T12:09:08.208221+00:00",
+  "config_fingerprint": "cb9b93f46e46c5d6b254b6fdd45dc51fd7f811653b5e38b2656c1dc7f242ddc5",
+  "dataset_fingerprint": "a7347b5bd0af6f4c536c84274f9e273454c4d6d380eefc6aa32864480a4ad54c",
+  "dataset_path": "D:\\AIEproject\\MAIE5532_MLS\\final\\data\\processed\\lcl_pilot",
+  "source_zip_sha256": "06c421f40add2c31f2cb3e54cbc4b237727dceb9fa576b4874e82bef3a7f08cb",
+  "source_files": {
+    "energyfl/bootstrap.py": "a41d16b97f49cf209bd660bb37177ab91f89900951264c3a7d476e4475129e68",
+    "energyfl/common.py": "2dd32150384df379e7c4410ded8375cb9a82dfafaa3ba17e9b278a6936f57307",
+    "energyfl/data.py": "0769c43f81172b2f15ff46fd901b457c34e1d5336139f83acb6d95f20ed81b32",
+    "energyfl/download.py": "338eba7b639fa4d29b131746806250fee741318fd003e0cae3644ccef5e723ae",
+    "energyfl/engine.py": "1b8f3f29a9a3f0364b666f8aa97c9bcee87643ebce56183544a80ed3dba9ef81",
+    "energyfl/models.py": "8c6ed6db203f6c5720b61cd19d01154e146cf7f95eb224e56fa56350424bc53b",
+    "energyfl/privacy.py": "d29239bbdea7fdfbe7b6162911de1ed1d6a8476ee31d2cb8f7c83b0e4c33947d",
+    "energyfl/profile.py": "15c9cc3d5de71c2d443674f16af0dd4c813b0efcb61bf6e04bab5e5e12c72bf7",
+    "energyfl/reporting.py": "7d1fd795e70bf86db101dfd26b320343208b311cbcd2b490ce82e07bce6f32cd",
+    "energyfl/simulation.py": "8a26c62f6f643167baf2bd1e0759b89a028cd1dad1f0c73928fe7f51815a3e10",
+    "energyfl/__init__.py": "41362a5ea4931c546433d4c48290c5707bf02dbbea1c3aafa9f43d1225e47003",
+    "energyfl/__main__.py": "cd9ad55db80d39da26994dfa76a84aec196a650a1784d09058c6f5d38ca91ed2"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "numpy": "2.2.6",
+    "torch": "2.8.0+cpu",
+    "cuda_runtime": null,
+    "cuda_available": false,
+    "gpu": null,
+    "command": [
+      "D:\\AIEproject\\MAIE5532_MLS\\final\\energyfl\\__main__.py",
+      "train",
+      "--config",
+      "reports/plans/laptop_validation_v1/fastest_d3_s27.json",
+      "--run",
+      "runs/laptop_validation_v1/fastest_d3_s27"
+    ],
+    "pid": 7552
+  },
+  "synthetic_data": false,
+  "privacy_scope": "Research artifacts include non-private validation metrics. Do not publish this directory as DP output.",
+  "aggregation_backend": "plain",
+  "security_claim": "No real secure aggregation; masking_sim is a correctness simulator only."
+}

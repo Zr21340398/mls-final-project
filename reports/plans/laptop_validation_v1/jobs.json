@@ -1,0 +1,146 @@
+[
+    {
+        "config":  "reports/plans/laptop_validation_v1/random_d60_s7.json",
+        "run":  "runs/laptop_validation_v1/random_d60_s7"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/random_d60_s17.json",
+        "run":  "runs/laptop_validation_v1/random_d60_s17"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/random_d60_s27.json",
+        "run":  "runs/laptop_validation_v1/random_d60_s27"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/fastest_d60_s7.json",
+        "run":  "runs/laptop_validation_v1/fastest_d60_s7"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/fastest_d60_s17.json",
+        "run":  "runs/laptop_validation_v1/fastest_d60_s17"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/fastest_d60_s27.json",
+        "run":  "runs/laptop_validation_v1/fastest_d60_s27"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/coverage_d60_s7.json",
+        "run":  "runs/laptop_validation_v1/coverage_d60_s7"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/coverage_d60_s17.json",
+        "run":  "runs/laptop_validation_v1/coverage_d60_s17"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/coverage_d60_s27.json",
+        "run":  "runs/laptop_validation_v1/coverage_d60_s27"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/random_d1_s7.json",
+        "run":  "runs/laptop_validation_v1/random_d1_s7"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/random_d1_s17.json",
+        "run":  "runs/laptop_validation_v1/random_d1_s17"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/random_d1_s27.json",
+        "run":  "runs/laptop_validation_v1/random_d1_s27"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/fastest_d1_s7.json",
+        "run":  "runs/laptop_validation_v1/fastest_d1_s7"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/fastest_d1_s17.json",
+        "run":  "runs/laptop_validation_v1/fastest_d1_s17"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/fastest_d1_s27.json",
+        "run":  "runs/laptop_validation_v1/fastest_d1_s27"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/coverage_d1_s7.json",
+        "run":  "runs/laptop_validation_v1/coverage_d1_s7"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/coverage_d1_s17.json",
+        "run":  "runs/laptop_validation_v1/coverage_d1_s17"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/coverage_d1_s27.json",
+        "run":  "runs/laptop_validation_v1/coverage_d1_s27"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/random_d3_s7.json",
+        "run":  "runs/laptop_validation_v1/random_d3_s7"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/random_d3_s17.json",
+        "run":  "runs/laptop_validation_v1/random_d3_s17"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/random_d3_s27.json",
+        "run":  "runs/laptop_validation_v1/random_d3_s27"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/fastest_d3_s7.json",
+        "run":  "runs/laptop_validation_v1/fastest_d3_s7"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/fastest_d3_s17.json",
+        "run":  "runs/laptop_validation_v1/fastest_d3_s17"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/fastest_d3_s27.json",
+        "run":  "runs/laptop_validation_v1/fastest_d3_s27"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/coverage_d3_s7.json",
+        "run":  "runs/laptop_validation_v1/coverage_d3_s7"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/coverage_d3_s17.json",
+        "run":  "runs/laptop_validation_v1/coverage_d3_s17"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/coverage_d3_s27.json",
+        "run":  "runs/laptop_validation_v1/coverage_d3_s27"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/random_d10_s7.json",
+        "run":  "runs/laptop_validation_v1/random_d10_s7"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/random_d10_s17.json",
+        "run":  "runs/laptop_validation_v1/random_d10_s17"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/random_d10_s27.json",
+        "run":  "runs/laptop_validation_v1/random_d10_s27"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/fastest_d10_s7.json",
+        "run":  "runs/laptop_validation_v1/fastest_d10_s7"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/fastest_d10_s17.json",
+        "run":  "runs/laptop_validation_v1/fastest_d10_s17"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/fastest_d10_s27.json",
+        "run":  "runs/laptop_validation_v1/fastest_d10_s27"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/coverage_d10_s7.json",
+        "run":  "runs/laptop_validation_v1/coverage_d10_s7"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/coverage_d10_s17.json",
+        "run":  "runs/laptop_validation_v1/coverage_d10_s17"
+    },
+    {
+        "config":  "reports/plans/laptop_validation_v1/coverage_d10_s27.json",
+        "run":  "runs/laptop_validation_v1/coverage_d10_s27"
+    }
+]

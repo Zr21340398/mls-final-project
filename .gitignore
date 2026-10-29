@@ -4,6 +4,16 @@ __pycache__/
 *.pyc
 data/raw/
 data/processed/
-runs/
-reports/
+# Keep selected completed experiments; new runs remain ignored by default.
+runs/*
+!runs/lcl_pilot_v1/
+!runs/laptop_validation_v1/
+reports/*
+!reports/lcl_pilot_v1/
+!reports/laptop_validation_v1/
+!reports/pilot_setup/
+!reports/preexperiment_analysis_v1/
+!reports/plans/
+reports/plans/*
+!reports/plans/laptop_validation_v1/
 *.egg-info/

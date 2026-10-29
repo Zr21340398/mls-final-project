@@ -1,0 +1,95 @@
+{
+  "round": 10,
+  "update_applied": true,
+  "validation": {
+    "macro_mae_kwh": 0.16670463452023696,
+    "macro_rmse_kwh": 0.2361438539577098,
+    "p90_household_mae_kwh": 0.2840680680460555,
+    "evaluated_clients": 12,
+    "per_household": [
+      {
+        "client": "MAC000002",
+        "n": 1302,
+        "mae_kwh": 0.19635939331932353,
+        "rmse_kwh": 0.28704166838464995
+      },
+      {
+        "client": "MAC000006",
+        "n": 1302,
+        "mae_kwh": 0.050112490731058994,
+        "rmse_kwh": 0.07344923476914564
+      },
+      {
+        "client": "MAC000008",
+        "n": 1302,
+        "mae_kwh": 0.21012036977780132,
+        "rmse_kwh": 0.2548686406077187
+      },
+      {
+        "client": "MAC000009",
+        "n": 1302,
+        "mae_kwh": 0.14346796540391285,
+        "rmse_kwh": 0.23632378345865304
+      },
+      {
+        "client": "MAC000010",
+        "n": 1302,
+        "mae_kwh": 0.39784685226984035,
+        "rmse_kwh": 0.5340174326529556
+      },
+      {
+        "client": "MAC000011",
+        "n": 1302,
+        "mae_kwh": 0.2919462347157334,
+        "rmse_kwh": 0.3819312622067703
+      },
+      {
+        "client": "MAC000013",
+        "n": 1302,
+        "mae_kwh": 0.05900252572907966,
+        "rmse_kwh": 0.07162901553231146
+      },
+      {
+        "client": "MAC000018",
+        "n": 1302,
+        "mae_kwh": 0.1334468333675735,
+        "rmse_kwh": 0.195463995143883
+      },
+      {
+        "client": "MAC000019",
+        "n": 1302,
+        "mae_kwh": 0.11367449575778432,
+        "rmse_kwh": 0.18296243700494605
+      },
+      {
+        "client": "MAC000021",
+        "n": 1302,
+        "mae_kwh": 0.2131645680189541,
+        "rmse_kwh": 0.3016602772645399
+      },
+      {
+        "client": "MAC000027",
+        "n": 1302,
+        "mae_kwh": 0.11065470128938949,
+        "rmse_kwh": 0.15928277354599338
+      },
+      {
+        "client": "MAC000029",
+        "n": 1302,
+        "mae_kwh": 0.08065918386239171,
+        "rmse_kwh": 0.15509572692095105
+      }
+    ]
+  },
+  "train_loss_normalized": 0.6695914041250944,
+  "peak_process_rss_mb": 302.1875,
+  "measured_round_s": 2.6369018999976106,
+  "measured_wall_s": 32.790955500000564,
+  "virtual_elapsed_s": 57.2684484381151,
+  "modeled_round_bytes": 185904,
+  "participation_coverage": 1.0,
+  "epsilon": null,
+  "dp_releases": 0,
+  "noise_std": 0.0,
+  "peak_gpu_allocated_mb": 0.0
+}

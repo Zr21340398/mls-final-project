@@ -1,0 +1,103 @@
+{
+  "created_utc": "2026-10-27T15:22:51.189926+00:00",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "numpy": "2.2.6",
+    "torch": "2.8.0+cpu",
+    "cuda_runtime": null,
+    "cuda_available": false,
+    "gpu": null,
+    "command": [
+      "D:\\AIEproject\\MAIE5532_MLS\\final\\energyfl\\__main__.py",
+      "bootstrap-pilot",
+      "--run",
+      "runs/lcl_pilot_v1"
+    ],
+    "pid": 29620
+  },
+  "config": {
+    "seed": 7,
+    "data": "data/processed/lcl_pilot",
+    "model": {
+      "kind": "gru",
+      "hidden": 32
+    },
+    "train": {
+      "method": "federated",
+      "device": "cpu",
+      "threads": 2,
+      "rounds": 10,
+      "local_steps": 10,
+      "batch_size": 32,
+      "lr": 0.001,
+      "clients_per_round": 6,
+      "scheduler": "coverage",
+      "weighting": "equal",
+      "eval_every": 1
+    },
+    "simulation": {
+      "availability": 1.0,
+      "dropout": 0.1,
+      "min_survivors": 4,
+      "deadline_s": 60.0,
+      "reference_step_s": 0.05,
+      "calibration_source": "UNMEASURED: run profile first",
+      "coverage_fraction": 0.25,
+      "aggregation": "plain",
+      "profiles": [
+        {
+          "name": "constrained",
+          "speed": 0.25,
+          "ram_mb": 128,
+          "mbps": 0.5,
+          "latency_ms": 100,
+          "energy_budget": 1000.0,
+          "inference_deadline_ms": 100
+        },
+        {
+          "name": "intermediate",
+          "speed": 0.5,
+          "ram_mb": 512,
+          "mbps": 5,
+          "latency_ms": 50,
+          "energy_budget": 1000.0,
+          "inference_deadline_ms": 50
+        },
+        {
+          "name": "capable",
+          "speed": 1.0,
+          "ram_mb": 2048,
+          "mbps": 20,
+          "latency_ms": 10,
+          "energy_budget": 1000.0,
+          "inference_deadline_ms": 20
+        }
+      ]
+    },
+    "privacy": {
+      "enabled": false,
+      "clip_norm": 1.0,
+      "noise_multiplier": 8.0,
+      "delta": 1e-05,
+      "epsilon_cap": 8.0,
+      "deterministic_noise": false,
+      "clip_updates": true
+    }
+  },
+  "dataset_fingerprint": "a7347b5bd0af6f4c536c84274f9e273454c4d6d380eefc6aa32864480a4ad54c",
+  "workload_fingerprint": "dc1b6a1538edbca240811240e876932d950002a8d21dceaa6b44f2ab3064cd77",
+  "measured_train_step_s": 0.035745440000027884,
+  "trial_step_seconds": [
+    0.037315445000058386,
+    0.03569195000000036,
+    0.035745440000027884
+  ],
+  "steps_per_trial": 20,
+  "warmup_steps_per_trial": 2,
+  "batch_size": 32,
+  "peak_process_rss_mb": 316.38671875,
+  "gpu_peak_allocated_mb": 0,
+  "parameter_count": 3873,
+  "note": "Measurement for this hardware/workload only. Use calibrate to generate a linked configuration automatically."
+}

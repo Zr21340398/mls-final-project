@@ -1,0 +1,76 @@
+{
+  "seed": 27,
+  "data": "data/processed/lcl_pilot",
+  "model": {
+    "kind": "gru",
+    "hidden": 32
+  },
+  "train": {
+    "method": "federated",
+    "device": "cpu",
+    "threads": 2,
+    "rounds": 50,
+    "local_steps": 10,
+    "batch_size": 32,
+    "lr": 0.001,
+    "clients_per_round": 6,
+    "scheduler": "coverage",
+    "weighting": "equal",
+    "eval_every": 1
+  },
+  "simulation": {
+    "availability": 1.0,
+    "dropout": 0.1,
+    "min_survivors": 4,
+    "deadline_s": 60,
+    "reference_step_s": 0.035745440000027884,
+    "calibration_source": "D:\\AIEproject\\MAIE5532_MLS\\final\\reports\\pilot_setup\\profile.json",
+    "coverage_fraction": 0.25,
+    "aggregation": "plain",
+    "profiles": [
+      {
+        "name": "constrained",
+        "speed": 0.25,
+        "ram_mb": 128,
+        "mbps": 0.5,
+        "latency_ms": 100,
+        "energy_budget": 1000.0,
+        "inference_deadline_ms": 100
+      },
+      {
+        "name": "intermediate",
+        "speed": 0.5,
+        "ram_mb": 512,
+        "mbps": 5,
+        "latency_ms": 50,
+        "energy_budget": 1000.0,
+        "inference_deadline_ms": 50
+      },
+      {
+        "name": "capable",
+        "speed": 1.0,
+        "ram_mb": 2048,
+        "mbps": 20,
+        "latency_ms": 10,
+        "energy_budget": 1000.0,
+        "inference_deadline_ms": 20
+      }
+    ],
+    "calibration": {
+      "report_path": "D:\\AIEproject\\MAIE5532_MLS\\final\\reports\\pilot_setup\\profile.json",
+      "report_sha256": "ac9affb06076c86356c30e6ff3027e75045b8c090838b511d8ee55ee30f4f1d2",
+      "workload_fingerprint": "dc1b6a1538edbca240811240e876932d950002a8d21dceaa6b44f2ab3064cd77",
+      "base_config_fingerprint": "43e5078855cd388e1a7968395b17246d047b262fec2065feecde115cb289e664",
+      "statistic": "median_of_measured_local_step_times"
+    }
+  },
+  "privacy": {
+    "enabled": false,
+    "clip_norm": 1.0,
+    "noise_multiplier": 8.0,
+    "delta": 1e-05,
+    "epsilon_cap": 8.0,
+    "deterministic_noise": false,
+    "clip_updates": true
+  }
+}
