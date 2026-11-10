@@ -2,7 +2,7 @@
 
 家庭能源预测项目的第一版可运行实现。训练、验证、测试、异构资源仿真、隐私预算记录和实验归档使用同一套配置。
 
-**实现状态**：PyTorch GRU/MLP、FedAvg/等客户端聚合、三种调度、掉线/超时/资源预算、中央客户端级 DP 实验、掩码正确性模拟、CPU INT8、日志监控和报告汇总均有实现。`masking_sim` **不是 Flower SecAgg+**：目前尚未实现真实协议的密钥交换、秘密分享及掩码提交后的掉线恢复。仿真中的客户端没有物理隔离。不要将其报告为真实安全聚合系统。正式 SecAgg+ 集成应作为后续独立验证里程碑。
+**实现状态**：PyTorch GRU/MLP、FedAvg/等客户端聚合、三种调度、掉线/超时/资源预算、中央客户端级 DP 实验、掩码正确性模拟、CPU INT8、日志监控和报告汇总均有实现。`masking_sim` 用于掩码正确性模拟：目前尚未实现真实协议的密钥交换、秘密分享及掩码提交后的掉线恢复。仿真中的客户端没有物理隔离。不要将其报告为真实安全聚合系统。正式 SecAgg+ 集成应作为后续独立验证里程碑。
 
 ## 执行主线：现在该做什么
 
@@ -10,12 +10,12 @@
 
 | 阶段 | 当前状态 / 操作 | 阅读位置 |
 | --- | --- | --- |
-| 环境安装 | 当前电脑已有可用 `.venv`，跳过 | 附录 A，仅新机器需要 |
+| 环境与数据 | 服务器环境和数据准备已完成；先检查 60 户数据路径 | 第 3.1 节 |
 | 真实数据 pilot | 已完成 bootstrap 和报告；bootstrap 已包含 10 轮训练 | 主线第 1 节，无需补跑 train |
 | 笔记本扩展验证 | **36 次训练与结果分析已完成；查看结论并备份归档** | 主线 2.5；归档命令见 2.4 |
-| L20 正式实验 | 当前进入方案与环境准备；尚未启动 | 主线第 3 节；附录 D 仅作命令参考 |
+| L20 正式实验 | 从 GPU 检查和节点校准开始；训练短测按需选择 | 第 3 节 |
 
-当前所有 PowerShell 命令均在 `D:\AIEproject\MAIE5532_MLS\final` 执行，使用 `.venv\Scripts\python.exe`。本批配置、36 次训练和分析均已完成，不要重复执行 2.2 / 2.3；先阅读 2.5，再完成证据归档与第 3 节的正式实验准备。正文中的“说明”无需执行命令，“可选”不影响主线完成。
+第 1–2 节保留 Windows 预实验记录；正式实验在服务器 Bash 中按第 3 节执行。服务器环境与数据准备已完成，从第 3.1 节提交 GPU 检查和校准作业开始。
 
 ## 1. 真实数据 pilot（已完成，供回顾）
 
@@ -52,7 +52,7 @@
 
 **当前状态：36 / 36 次运行均完成 50 轮，分析结论见 2.5；尚未生成各 run 的完整性清单。** 2.1–2.3 保留为实验设计与运行记录，不需要重跑。归档命令见 2.4。原 README 的 6.2 / 6.3 对应现在的 2.2 / 2.3。
 
-本阶段扩大的是实验轮数和对照次数，仍使用已经处理好的 12 户真实 LCL 数据，不重新下载、不覆盖 `runs/lcl_pilot_v1`，也不重新创建虚拟环境。正式 60 户与隐私实验仍安排在后续 L20 阶段；这一步用于检查方案是否值得扩大，而不是宣称 12 户已经代表全部家庭。
+本阶段扩大的是实验轮数和对照次数，仍使用已经处理好的 12 户真实 LCL 数据，不重新下载、不覆盖 `runs/lcl_pilot_v1`，也不重新创建虚拟环境。正式 60 户与隐私实验仍安排在后续 L20 阶段；这一步用于检查方案是否值得扩大；结论的观察范围为该 12 户家庭。
 
 ### 2.1 要验证的问题与固定条件
 
@@ -63,13 +63,13 @@
 
 共 36 次，每次从头训练 50 轮。主对照的 60 秒结果也作为敏感性实验的宽松端点，无需重复运行。固定 GRU hidden=32、每轮 6 户、每户 10 个 minibatch 更新、batch=32、学习率 0.001、CPU 2 线程、等客户端聚合、裁剪开启、DP 关闭、plain 聚合、可用率 1.0、掉线率 0.1、最少成功客户端数 4。保持相同数据、时间划分、归一化与校准报告；同一随机种子下各调度使用相同的资源轨迹。
 
-**超时依据**：当前校准下，三个资源档位的模拟完成时间约为 0.39 / 0.86 / 2.13 秒，并叠加 ±10% 波动。因此 1 秒会排除慢档设备，3 秒通常容纳全部正常设备，10 / 60 秒主要改变等待掉线客户端的成本。这些是模拟完成时间，不是三种真实硬件的测量。先固定这组阈值，再查看新实验结果，避免按效果挑选超时值。
+**超时依据**：当前校准下，三个资源档位的模拟完成时间约为 0.39 / 0.86 / 2.13 秒，并叠加 ±10% 波动。因此 1 秒会排除慢档设备，3 秒通常容纳全部正常设备，10 / 60 秒主要改变等待掉线客户端的成本。这些完成时间来自模拟模型。先固定这组阈值，再查看新实验结果，避免按效果挑选超时值。
 
-已完成 pilot 的 10 轮训练循环约 28 秒。线性外推 36 × 50 轮约 84 分钟，仅作预算参考；实际时间受温度、后台负载、验证及文件写入影响，原计划预留 1–3 小时。本批实际记录累计 8.77 小时，单 run 中位数 150.38 秒，但存在小时级轮内计时异常；初始预算不能作为已验证的实耗承诺，详见 2.5。顺序执行，不要同时开启多个训练任务；接通电源并避免自动睡眠。模型很小，无需 GPU；这不表示正式实验必须继续使用笔记本。保留所有 checkpoint 会增加磁盘占用，应检查剩余空间。
+已完成 pilot 的 10 轮训练循环约 28 秒。线性外推 36 × 50 轮约 84 分钟，仅作预算参考；实际时间受温度、后台负载、验证及文件写入影响，原计划预留 1–3 小时。本批实际记录累计 8.77 小时，单 run 中位数 150.38 秒，但存在小时级轮内计时异常；初始预算不能作为已验证的实耗承诺，详见 2.5。顺序执行，不要同时开启多个训练任务；接通电源并避免自动睡眠。模型很小，可在 CPU 上运行；正式实验可选择服务器 GPU。保留所有 checkpoint 会增加磁盘占用，应检查剩余空间。
 
 ### 2.2 一次生成全部配置（不启动训练）
 
-以下 PowerShell 在项目目录运行。复用现有校准，只改变轮数、种子、调度及超时；不要改动校准耗时。现有 `experiment_matrix.py` 的 core 套件还包含其他基线，不等于这里的 36 次实验，因此本阶段按下面的专用配置清单运行。
+以下 PowerShell 在项目目录运行。复用现有校准，只改变轮数、种子、调度及超时；不要改动校准耗时。现有 `experiment_matrix.py` 的 core 套件还包含其他基线；本阶段按下面的专用配置清单运行。
 
 ```powershell
 cd D:\AIEproject\MAIE5532_MLS\final
@@ -169,9 +169,9 @@ foreach ($job in $jobs) {
 - [预实验结论文档](reports/preexperiment_analysis_v1/preexperiment_conclusions.docx)：完整分析、适用范围、耗时异常及正式实验准备。
 - [跨种子汇总](reports/preexperiment_analysis_v1/groups.csv)、[逐次结果](reports/preexperiment_analysis_v1/runs.csv)与[结构化分析](reports/preexperiment_analysis_v1/analysis.json)。
 - [同种子配对差值](reports/preexperiment_analysis_v1/paired.csv)、[共同模拟时间比较](reports/preexperiment_analysis_v1/same_time.csv)、[逐户参与](reports/preexperiment_analysis_v1/household_participation.csv)、[逐轮数据](reports/preexperiment_analysis_v1/rounds.csv)。
-- [分析来源哈希](reports/preexperiment_analysis_v1/evidence_sha256.json)：本次读取文件的 SHA256 快照；不是训练前防篡改证明，也不替代完整 run 的 seal/verify。
+- [分析来源哈希](reports/preexperiment_analysis_v1/evidence_sha256.json)：本次读取文件的 SHA256 快照；完整 run 的归档仍需执行 seal/verify。
 
-下表为 **3 秒超时、第 50 轮验证结果**。MAE 单位 kWh，“±”是 3 个种子的样本标准差；模拟时间和 Jain 指数为跨种子均值。Jain 基于全部 12 户的成功贡献次数，越接近 1 越均衡，不表示预测误差公平性。
+下表为 **3 秒超时、第 50 轮验证结果**。MAE 单位 kWh，“±”是 3 个种子的样本标准差；模拟时间和 Jain 指数为跨种子均值。Jain 基于全部 12 户的成功贡献次数，越接近 1 表示贡献次数越均衡；预测误差公平性需单独评估。
 
 | 调度 | MAE 均值 ± SD | 累计模拟时间 秒 | 零贡献家庭数 | 贡献 Jain |
 | --- | --- | --- | --- | --- |
@@ -197,17 +197,170 @@ foreach ($job in $jobs) {
 
 **现在要做：** 阅读结论后，用 2.4 的 seal/verify 命令建立完整性清单，再备份完整 run、计划配置、处理后数据、校准记录、源码和分析材料。本次分析时 36 次 run 均没有 `integrity.json`，不能将“完成训练”写成“已完成完整归档”。
 
-## 3. 后续主线：准备 L20 正式实验
+## 3. L20 正式实验
 
-预实验分析已完成，可以开始准备正式实验；无需重跑本批 36 次训练。启动正式训练前，依次固定以下内容：
+服务器环境和数据集已经准备完成。按本节依次执行 GPU 检查与节点校准 → 固定协议 → 生成并执行实验 → 验证分析 → 冻结后测试 → 保存归档。10 轮训练短测可按需选择。第 1–2 节的 12 户预实验保留供参考。
 
-1. **数据与对照：** 准备独立版本的 60 户数据，保存家庭清单与划分；补齐相同验证窗口下的季节性、local、centralized 和联邦预测基线。
-2. **评价协议：** 保留 random / fastest / coverage，预先确定训练上限或验证停止规则、主指标、共同模拟时间预算；增加种子并改变家庭与资源档位映射。50 轮目前只是预实验预算，不是已证明的最优轮数。
-3. **模拟语义：** 明确保持当前等待截止时间的规则，还是新增满足条件后提前结束的对照；明确虚拟设备参数是否保持不变。修改模型后使用新目录，不与本批混为同一对照。
-4. **算力预算：** 节点安装 CUDA 环境并重新校准，先完成一个受控短任务，分别记录训练、验证、保存时间和 GPU 利用率，再预算整批卡时。当前小 GRU 不保证 GPU 更快。
-5. **后续阶段：** 先完成预测和调度对照，再增加 DP、压缩与安全聚合验证，最后对冻结方案进行独立测试。`masking_sim` 仍不是真实 SecAgg+。
+以下示例使用 `~/projects/mls-final-project` 和 `data/processed/lcl_60`；若你的实际目录不同，先替换路径。环境初始化以服务器已验证的方式为准；若已按照 [HPC4 指南](docs/HKUST_HPC4_L20_GUIDE.md) 建立 `hpc/env.sh`，在计算节点通过 `source hpc/env.sh` 加载。示例账户 `mscaiehpc42026` 与分区 `gpu-l20` 沿用现有指南，提交前确认账户授权与站点设置。
 
-附录 D 提供命令形式，不能替代节点环境和数据准备。无需在当前笔记本上提前执行这些 GPU 配置。当前准备阶段不运行独立测试或隐私实验。
+### 3.1 通过 sbatch 检查 GPU 和数据
+
+在服务器登录节点、项目根目录执行。确认代码已包含 `scripts/hpc4_gpu_check.sbatch`，且 `hpc/env.sh` 能加载当前节点的 Python 模块和虚拟环境。示例账户和分区沿用现有服务器指南，提交前按实际授权调整：
+
+```bash
+cd ~/projects/mls-final-project
+bash -n scripts/hpc4_gpu_check.sbatch
+sbatch --account=mscaiehpc42026 --partition=gpu-l20 scripts/hpc4_gpu_check.sbatch check
+```
+
+记录返回的 JobID；作业排队后自动申请一张 GPU，完成检查或出错后释放资源。无需保持 SSH 连接：
+
+```bash
+squeue -u "$USER"
+sacct -j JOBID --format=JobID,State,Elapsed,ExitCode,MaxRSS
+cat slurm-check-JOBID.out
+```
+
+将 `JOBID` 替换为实际编号。脚本检查 `configs/l20.json` 指向的数据、全部家庭文件哈希、60 户真实数据、PyTorch CUDA 和一次 GPU 计算；日志包含数据指纹和 GPU 型号。数据路径不同时先将 `configs/l20.json` 中的 `data` 改为已准备的数据路径，并记录配置。`ENERGYFL_ENV` 可指定其他环境初始化脚本，例如 `sbatch --export=ALL,ENERGYFL_ENV=hpc/my_env.sh ...`。
+
+### 3.2 节点校准与可选训练短测
+
+跳过训练短测时，可将检查和校准放入一次作业，检查结束后自动校准并释放节点。若之前检查已通过，也可以直接提交此命令，它会再次检查 GPU 与数据：
+
+```bash
+sbatch --account=mscaiehpc42026 --partition=gpu-l20 scripts/hpc4_gpu_check.sbatch calibrate
+```
+
+作业成功后查看 `slurm-check-JOBID.out`、`reports/hpc4_setup_v1/profile.json` 和 `configs/l20.hpc4_v1.json`。后续计划使用新配置作为 base。脚本采用 `configs/l20.json` 中的模型、数据、batch、设备和线程；这些条件改变后，用新的配置和报告路径重新校准。已有同名结果时校准器会检查是否匹配，设置变化时先修改脚本中的输出路径，保留原记录。校准器也会执行少量训练 step 来测量耗时，完整正式训练从第 3.4 节的各实验独立开始。
+
+完成校准后可直接进入第 3.3 节，固定正式轮数、调度、超时和评估协议，再生成 core 计划。当前模板为 100 轮、每轮 12 户、每户 20 steps、batch 64；正式执行前请确认这些设置和预计 GPU 预算。跳过 10 轮短测时，单次运行时间尚无完整流程实测，可通过第一个正式 run 的日志和 `sacct` 结果估算后续作业时限。
+
+如需事先观察训练、验证和 checkpoint 的整体耗时，可另行提交 10 轮短测：
+
+```bash
+sbatch hpc/run.sbatch -m energyfl train --config configs/l20.hpc4_v1.json --run runs/hpc4_preflight_v1 --stop-after 10
+```
+
+使用独立短测目录；正式实验以新的计划和 run 目录启动。模拟时间、实际墙钟时间与模拟通信量分开记录。
+
+### 3.3 在生成配置前固定正式协议
+
+将下列选择写入实验记录，再生成矩阵。当前模板用于起步，正式预算和阈值由团队结合节点校准及已掌握的运行记录确定。
+
+- **训练与预测：** 预测下一小时总用电量；固定数据版本、模型、batch、训练轮数、客户端数、学习率和选择 checkpoint 的规则。训练与验证阶段保留测试集。
+- **主要对照：** core 包含 seasonal、local、centralized、样本加权 FedAvg，以及 random、fastest、coverage 等客户端加权对照；默认种子为 7、17、27，共 21 个配置。seasonal 使用一轮，其他配置按设定轮数训练。
+- **系统评价：** 预先确定调度策略、超时、掉线与可用率、共同模拟时间或共同轮数比较方式；统计 MAE、RMSE、家庭误差 p90、成功贡献次数、失败轮、模拟时间和实际耗时。
+- **模型假设：** 客户端、网络和设备资源在单机程序中模拟。当前家庭与资源档位按固定顺序映射；若正式协议要求随机化映射，需要先开发并验证，再用新源码版本和新批次执行。当前模拟器在选中客户端掉线或超时时等待至 deadline；如需提前聚合对照，需要先实现该规则。
+- **隐私与压缩：** 先完成预测和调度对照，再决定 privacy 和 dropout 套件的具体范围；保留 plain 基线。`masking_sim` 为掩码正确性模拟；真实安全聚合协议尚待独立实现。DP 结果需要同时说明预算、机制和隐私边界。
+
+### 3.4 生成 core 计划并核查
+
+在项目根目录、已激活环境中执行。生成配置前先确认计划目录和运行目录均为空或不存在；重做计划使用新目录。矩阵继承校准配置中的训练参数、数据路径、截止时间和资源模型。
+
+```bash
+python scripts/experiment_matrix.py --base configs/l20.hpc4_v1.json --suite core --seeds 7 17 27 --plan reports/plans/hpc4_core_v1 --runs-root runs/hpc4_core_v1
+python -c 'import json; p=json.load(open("reports/plans/hpc4_core_v1/core_jobs.json")); print("jobs",len(p)); [print(x["method"],x["config"],x["run"]) for x in p]'
+```
+
+检查 21 个配置的参数、数据指纹和目标目录；确认 GPU 检查、校准、实验协议及预算后提交。配置生成器的 `--execute` 会顺序运行作业，并使用当前计算节点资源；长任务推荐按下面的 Slurm 流程提交。预实验的分析脚本固定读取旧的 36 次 run；正式数据的逐户公平性和共同模拟时间汇总需要新增或调整分析代码。
+
+### 3.5 顺序提交训练作业
+
+使用服务器已经准备好的 `hpc/env.sh` 和 HPC4 指南中的 `hpc/run.sbatch`；该脚本需在作业中加载环境并执行 `srun python -u "$@"`。确保 `logs/` 存在，检查脚本中的账号、分区、单卡、内存、线程和时限，然后在登录节点执行：
+
+```bash
+cd ~/projects/mls-final-project
+mkdir -p logs
+bash -n hpc/env.sh
+bash -n hpc/run.sbatch
+python - <<'PY' > /tmp/energyfl_core_jobs.tsv
+import json
+for job in json.load(open('reports/plans/hpc4_core_v1/core_jobs.json')):
+    print(job['config'] + '\t' + job['run'])
+PY
+previous=''
+while IFS=$'\t' read -r config run; do
+    if [ -n "$previous" ]; then
+        jobid=$(sbatch --parsable --dependency="afterok:$previous" hpc/run.sbatch -m energyfl train --config "$config" --run "$run") || break
+    else
+        jobid=$(sbatch --parsable hpc/run.sbatch -m energyfl train --config "$config" --run "$run") || break
+    fi
+    jobid=${jobid%%;*}
+    printf '%s %s %s\n' "$jobid" "$config" "$run"
+    previous=$jobid
+done < /tmp/energyfl_core_jobs.tsv
+```
+
+复制保存输出的作业编号及配置对应关系。后一个作业在前一个成功退出后开始；失败后检查队列中依赖作业的状态和失败原因，再决定恢复及后续提交。每次提交都要使用新的 run 目录；`--resume` 仅用于恢复已有的同一 run。
+
+```bash
+squeue -u "$USER"
+scontrol show job JOBID
+sacct -j JOBID --format=JobID,State,Elapsed,ExitCode,MaxRSS
+# 将 JOBID 换成实际值
+```
+
+作业中断后确认原作业已退出，再使用对应计划文件和 run 路径恢复：
+
+```bash
+sbatch hpc/run.sbatch -m energyfl train --config reports/plans/hpc4_core_v1/core_coverage_equal_s7.json --run runs/hpc4_core_v1/core_coverage_equal_s7 --resume
+```
+
+续训需要显式追加 `--resume`；重新执行原来的新建命令会因目录非空而停止。已完整提交的每一轮均有 checkpoint，程序从最后一个完整轮次继续；中断时正在执行的轮次重新计算。续训需重新申请 GPU，使用同一 config、run、数据指纹和源码；更改训练轮数也属于配置更改，需要建立新实验。Slurm 不会自动重提本示例作业，需在确认旧作业结束后手动提交恢复命令。
+
+批量链中断时，先恢复失败的单个 run，再检查所有后续作业是否因依赖失败未启动；按计划重新提交尚未执行的作业，避免重复提交已完成或仍在排队的任务。
+
+恢复要求配置、数据指纹及源码一致。遇到遗留 `RUNNING.lock`，先确认对应进程已经停止，再使用 `python -m energyfl unlock --run RUN路径 --confirmed-process-stopped`。检查 status、完整轮次和 Slurm 日志后再续跑；无需删除 checkpoint。
+
+### 3.6 其他套件和压缩
+
+core 结果核查后，根据已固定的研究问题分别生成计划：
+
+```bash
+python scripts/experiment_matrix.py --base configs/l20.hpc4_v1.json --suite privacy --seeds 7 17 27 --plan reports/plans/hpc4_privacy_v1 --runs-root runs/hpc4_privacy_v1
+python scripts/experiment_matrix.py --base configs/l20.hpc4_v1.json --suite dropout --seeds 7 17 27 --plan reports/plans/hpc4_dropout_v1 --runs-root runs/hpc4_dropout_v1
+```
+
+privacy 默认 5 种设置 × 3 种子，dropout 默认 3 个掉线率 × 3 种调度 × 3 种子。检查各自 `privacy_jobs.json` / `dropout_jobs.json`、DP 预算及 GPU 时限，再参照 3.5 提交对应计划；将读取路径和临时清单名称改为该套件的文件。DP run 可能以 `privacy_budget_exhausted` 状态结束，检查该状态、已完成轮次和隐私预算。
+
+量化需要共享神经模型，采用 CPU 推理测量，放在已加载环境的 CPU 计算节点，使用实际完成的 run 和新的输出目录：
+
+```bash
+python -m energyfl compress --run runs/hpc4_core_v1/core_coverage_equal_s7 --out reports/compression_hpc4_coverage_s7
+```
+
+记录压缩前后模型大小、验证 MAE 和 CPU 推理延迟。量化结果及设备适配规则以对应环境的测量为依据。
+
+### 3.7 检查验证结果并冻结方案
+
+作业完成后在计算节点运行：
+
+```bash
+python -m energyfl analyze --runs runs/hpc4_core_v1 --out reports/hpc4_core_v1
+```
+
+对 privacy、dropout 分别更换输入和输出目录。分析器读取指定目录的直接子 run；`runs.csv` 和 HTML 包含单次运行及验证曲线，`seed_summary.json` 汇总已有测试指标，测试前可能为空。结合逐轮 `metrics.json` 和 `clients.json` 检查学习趋势、各种子结果、每户被选择与成功贡献、掉线/超时、失败轮和资源使用。固定公平性、模拟时间和预算指标后补充跨种子统计及图表。资源映射固定、模拟时间、网络与能量假设等条件须在最终报告中说明。
+
+根据验证集预先确定要测试的配置、种子和 checkpoint 规则，记录冻结版本、配置与数据指纹。DP 使用 last checkpoint；其他方案按预先固定的 best 或 last 规则选择。
+
+### 3.8 独立测试与归档
+
+测试在冻结协议之后进行。测试使用 run 记录的计算设备，CUDA run 需提交到 GPU 节点；以下命令只示范一个已完成的非 DP run：
+
+```bash
+sbatch hpc/run.sbatch -m energyfl test --run runs/hpc4_core_v1/core_coverage_equal_s7 --checkpoint best
+```
+
+每个 run 只执行一次测试；DP run 使用 `--checkpoint last`。测试后重新运行 `analyze` 更新测试汇总。若数据目录迁移，可传 `--data` 指向指纹一致的处理后数据。
+
+对完成且计划测试已结束的每个 run 创建和检查完整性清单；以下为单次示例：
+
+```bash
+python -m energyfl seal --run runs/hpc4_core_v1/core_coverage_equal_s7
+python -m energyfl verify --run runs/hpc4_core_v1/core_coverage_equal_s7
+```
+
+如归档后新增测试文件，应重新生成清单并核验。保存完整 runs、计划、配置、节点校准报告、数据 manifest、环境版本、源码提交号、Slurm 日志和汇总结果，另存一份备份。原始和处理后数据继续通过独立存储备份；新正式实验目录默认受 Git 忽略，检查大小与内容后再按需加入版本管理。下载示例和服务器脚本模板见 [HPC4 指南](docs/HKUST_HPC4_L20_GUIDE.md)。
 
 ## 附录 A：首次安装（仅新机器需要，当前跳过）
 
@@ -237,13 +390,13 @@ powershell -ExecutionPolicy Bypass -File scripts/smoke.ps1
 
 脚本生成明确标为 synthetic 的数据、预处理 8 个家庭，训练 3 轮，单独评估测试集，输出 `reports/smoke/report.html`。已有同名实验或数据时会拒绝覆盖；更换输出路径，或直接查看已有结果。合成数据的数值只能用于工程验证，不能作为最终报告的 LCL 实验结果。
 
-## 附录 C：独立命令参考（按需使用，不是必做顺序）
+## 附录 C：独立命令参考（按需使用）
 
 本附录替代旧版第 4 节。**当前笔记本批量验证已完成；主线 2.2 / 2.3 仅供回顾与恢复参考。** 以下各命令对应不同情形，不要整节依次复制运行。示例实验目录与主线不同，使用前必须替换为目标实验路径。
 
 ### C.1 拆开运行下载、预处理与校准
 
-**按需参考，不是 bootstrap 之后的追加步骤。** 只在需要分别运行下载、预处理或校准时选择相应命令；已完成 bootstrap 的当前电脑无需执行。
+**按需参考。** 只在需要分别运行下载、预处理或校准时选择相应命令；已完成 bootstrap 的当前电脑无需执行。
 
 ```powershell
 python -m energyfl download --out data/raw/lcl
@@ -271,14 +424,14 @@ python -m energyfl calibrate --config configs/pilot_cpu.json --out-config config
 
 ### C.3 独立测试与量化评估（当前验证阶段不执行）
 
-**前提：正式实验方案冻结，目标 run 已完成训练。** 以下为将来的正式实验示例；`runs/coverage_s7` 不是本阶段自动生成的目录。
+**前提：正式实验方案冻结，目标 run 已完成训练。** 以下为将来的正式实验示例；`runs/coverage_s7` 是示例目录，请按实际 run 路径替换。
 
 ```powershell
 # 独立测试：仅在决定使用测试集作最终评估时执行
 python -m energyfl test --run runs/coverage_s7 --checkpoint best
 ```
 
-测试默认选择最佳验证 checkpoint，每个 run 只允许测试一次，保存逐样本压缩预测。DP 实验必须 `--checkpoint last`，因为使用非私有验证指标选择最佳模型本身不是已计费的 DP 机制。不要用测试结果修改配置后把重复评估伪装为独立测试。
+测试默认选择最佳验证 checkpoint，每个 run 只允许测试一次，保存逐样本压缩预测。DP 实验必须 `--checkpoint last`，因为按照非私有验证指标选择模型需要单独考虑隐私计费。不要用测试结果修改配置后把重复评估伪装为独立测试。
 
 ```powershell
 # 量化评估：仅在开展模型压缩实验时执行
@@ -296,7 +449,7 @@ python -m energyfl compress --run runs/coverage_s7 --out reports/compression_s7
 
 ## 附录 D：L20 正式实验命令示例（后续阶段，当前跳过）
 
-**这不是可立即整段执行的部署流程。** 笔记本结果分析已完成；仍需确定正式方案，在 L20 节点配置 CUDA 版 PyTorch 环境，并准备好 `data/processed/lcl_60` 的 60 户数据。以下 `python` 指节点环境中的 Python。Windows 环境不能复制到 Linux；迁移时还需检查数据与配置路径。
+**以下为按需参考的命令示例。** 服务器环境和数据已准备完成，正式实验步骤见第 3 节。以下 `python` 指节点环境中的 Python。Windows 环境不能复制到 Linux；迁移时还需检查数据与配置路径。
 
 ### D.1 节点校准与单次训练示例
 
@@ -337,7 +490,7 @@ python scripts/experiment_matrix.py --base configs/l20.calibrated.json --suite c
 
 当前单层 GRU hidden=32 共 3,873 个参数，以 96 个半小时历史点和 6 个特征预测下一小时总用电量。它适合作为本项目的主预测模型：支持时间序列输入，模型小，便于反复开展联邦聚合、调度、裁剪/DP 与 CPU 动态 INT8 实验。项目的系统问题不要求使用大型模型。
 
-但模型架构本身不保证准确率，也不能替代系统功能验证。需要通过季节性、local、centralized 等对照，以及 60 户、多种子的泛化结果证明适用性；量化后还需单独测量误差变化、体积和 CPU 推理耗时。当前预测目标仅为下一小时总量，不是未来 24 小时逐点预测或设备级负荷分解。真实安全聚合仍需独立实现与验证，不能因 GRU 能训练就视为整个项目已满足所有要求。
+但模型架构本身不保证准确率，也不能替代系统功能验证。需要通过季节性、local、centralized 等对照，以及 60 户、多种子的泛化结果证明适用性；量化后还需单独测量误差变化、体积和 CPU 推理耗时。当前预测目标为下一小时总量；未来 24 小时逐点预测和设备级负荷分解需要另行设计。真实安全聚合仍需独立实现与验证，不能因 GRU 能训练就视为整个项目已满足所有要求。
 
 ## 附录 F：HTTPS 证书错误排查（仅遇到下载错误时参考）
 

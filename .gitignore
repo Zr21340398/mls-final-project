@@ -17,3 +17,7 @@ reports/*
 reports/plans/*
 !reports/plans/laptop_validation_v1/
 *.egg-info/
+
+# Local copies downloaded from HPC; original results are archived separately.
+hpc4_downloads/
+logs/
