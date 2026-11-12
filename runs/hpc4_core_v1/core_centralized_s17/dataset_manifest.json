@@ -1,0 +1,1412 @@
+{
+  "schema": 1,
+  "source": "https://data.london.gov.uk/dataset/smartmeter-energy-consumption-data-in-london-households-vqm0d",
+  "synthetic": false,
+  "inputs": [
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_0.csv",
+      "sha256": "4997141df1efb62488305936c3d2aee395c456f475542bfbdcd5a2145479bd61"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_1.csv",
+      "sha256": "e2d9a8b89289edc7c6a25290b90635ac744cef347b7e0164f8c4bc2b8c0b55bd"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_10.csv",
+      "sha256": "b331bd5d216d02d0a17e2fef63ad7c14a84170dc0cb8be0c661acfcd66b1c844"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_100.csv",
+      "sha256": "3b27bcb63aca48dcd97b520930b8c3c7c8d6f5f76bf1da66f7050e350f2f2dd0"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_101.csv",
+      "sha256": "301d4070e9409924d4283300a2c16c1dee18e9450e3fcaa437926f486580aead"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_102.csv",
+      "sha256": "e266174e084b5719d94689b7ab5d95e07527eb469c7badbf1b2bdda7bd72638d"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_103.csv",
+      "sha256": "9c0d1a436e03f04a1b4629c9537916233bc27320a09e2fca0b1db7ebe4f90fa8"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_104.csv",
+      "sha256": "75ba54218d0646710e9de8c01fe8d1853aed19713b8f3f1af5fedeb1f70528ed"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_105.csv",
+      "sha256": "1587e36dc4cb51eb3614e397fa991d112c21d51a2121b53586b98371b4621c07"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_106.csv",
+      "sha256": "3cf71caada3b91373d406bf8c1c3eb770546775e99b9ae9e3fb1d6fddd0ccd94"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_107.csv",
+      "sha256": "e12c8e56219a2473dc1cfd173f27f07c1526e1399e33343ceb6bd44f865ad507"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_108.csv",
+      "sha256": "fae93d99e4ad41a456f8307f34b14073aa3da9450c5b6d9a6afed35bbb583c41"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_109.csv",
+      "sha256": "bc6e42bfa130ac573b6ab663df5d30226f5a4bf172fd18921680eec7527e7fce"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_11.csv",
+      "sha256": "cdcac7e23a253aeeec61c45271b2ad15eced5a067a82647aa1cc521f8cd498f2"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_110.csv",
+      "sha256": "d613640e01a51a0cc9ace46bb6edbc5fd1fcf4aa0dc771200a4b1a90ef0f312c"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_111.csv",
+      "sha256": "da73121775305b1c0d99613160bf5936111837cbf3b99f65879529479489938d"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_112.csv",
+      "sha256": "82af5f19713d468775a961b9e01b64fd06d0ef75066fde7d331481444489da01"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_113.csv",
+      "sha256": "624a2871c338a9bca41c6311ef2f2ef608ce6a1ddd69327d4a56684ecc5fc458"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_114.csv",
+      "sha256": "89acededaa1391471b04c740a227b839d4dc558ca5929b485170b1451aaa1170"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_115.csv",
+      "sha256": "d3ffd64cafd8d0c3bad8e92813289ea18361c55a0fa00e3bcd26625dc7a05a72"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_116.csv",
+      "sha256": "24d00e7e7f9723e14745fd64842a9d06a11e5ce557656f5ae918a8519b95e704"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_117.csv",
+      "sha256": "67215d044173b70be7712bca1de59ef5ab41a738d1d3c3a1fb46a47b6eb6bc7e"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_118.csv",
+      "sha256": "f22bb6fe69919e32459ca68da047532139464bba299e21fd32b26b75b042daa5"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_119.csv",
+      "sha256": "c387083b881ee450b11adcf6b320f639b08445365aa1004ed24a0b68ea4b9bb1"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_12.csv",
+      "sha256": "538d29ee4dc1d6bcb3b68efeee990bf7c2a9bbfdb75bb62757c7d644684175cb"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_120.csv",
+      "sha256": "aeab62d4ba15d460064369b39b25dd9f39bffbdc9fe677e21ef33ed3a85203ae"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_121.csv",
+      "sha256": "ab48d6d87817248834cdab567ff9467680f5d967dd6ab4eee64f8f2ebbedc22a"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_122.csv",
+      "sha256": "c35640eef7fac8241b8a415a72a2d24903841e933d5b24f651d88b85a5f5c43c"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_123.csv",
+      "sha256": "9942212b95286ef48d5c1b586ee5a4a85614e8f314502c601ae1b4beb632a84e"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_124.csv",
+      "sha256": "5a67f75c5b1191cde7a9c6a1742ebc16711231e0a79398d49165dc982ad590be"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_125.csv",
+      "sha256": "7396f2341357244597225d728418e3a774801343ebfb63e2ba9d7c846d1c50ca"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_126.csv",
+      "sha256": "9d4b16c5c7599627e1761fd720039b763964093c2927b0fb146748099d9b7c15"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_127.csv",
+      "sha256": "bb2ecc5d2b98e715839075cb9110fb765b9364ad4f35c9006718499facdd6e10"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_128.csv",
+      "sha256": "66025f7aaa41782879487b5f85007e54ea0a4a9bf0043839b3ea56d56741ba6a"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_129.csv",
+      "sha256": "4ff63ab8891e26f6e4b2f00f508f83c6ce7745991f3aac0d03ca5e13261a3281"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_13.csv",
+      "sha256": "22afea449d9f670bf368841ca229315642aabec060feff804afa471c5f7401d3"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_130.csv",
+      "sha256": "adc0d6f0acc645d1d789504089570ee19bfaa101146e431a29eba9849ef3f220"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_131.csv",
+      "sha256": "308887ae868fd9095844c78ffa57b8a79ec320b357ce43f0916733e236d4d3b6"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_132.csv",
+      "sha256": "ed2fd198a57bcb00e4d231c0da4c251fb374e5de88928d5e3253aaf0d5cd36a9"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_133.csv",
+      "sha256": "97fced5430fa14e0cb8ae05ae155d810c52b3d882dfd666ff6db69d4c49de9bd"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_134.csv",
+      "sha256": "bdb85d3ed8dafb94a09d6d2e67bb08d802570d64d9acc505d8016b1bf218ef02"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_135.csv",
+      "sha256": "9c18c4f2ceb58a0dcc863f506cae3bf848f382a0e6a6020e6fbc80408a920f63"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_136.csv",
+      "sha256": "f9d7a3e3dcdfa603bb64bacb1bbdb2e22939e5d34c5fb7523ddc128b76ba79b8"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_137.csv",
+      "sha256": "78c5b1d59a473bcadad736805ca9c88c553dbbfddef9ce9a26365207ef40d4ec"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_138.csv",
+      "sha256": "03349532de7ac6f0d2a7857f056db2641e35fe7cdcc368433719b3d0aba19312"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_139.csv",
+      "sha256": "3a8d67d89cd37f9a07ee407d8cafa9b2fc11016ff5c2bd9c7a083821172faa7a"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_14.csv",
+      "sha256": "b2b2f8762a069bee825f14b56593ad6989e2c2f38dab406addaed907e73bb31b"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_140.csv",
+      "sha256": "73af593201cce829295fdbbfec998a46dc9c86c05de15b9b0c94eed7859c6959"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_141.csv",
+      "sha256": "595957f9bc70e4640c1d0b7568982af059c9d1332641a8433f9f79ecb78bb77a"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_142.csv",
+      "sha256": "85fbc2cc2ba7d8b2b888c3042df4d4718aa263814707f81841bb2a98f7b490cd"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_143.csv",
+      "sha256": "6e45bafb58a8b439f4a42041573a13bc35a0461f7d7201c3ceb5214a2e301af1"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_144.csv",
+      "sha256": "d0ebb59dd1c84f2913badf437e5a6963892004c330f1395084c3f1f3a7882f85"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_145.csv",
+      "sha256": "e65c7c4abf339446d98cdb3e76e62d3861f51e27a1c978970f5cc6325cd0bdfe"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_146.csv",
+      "sha256": "b36ef685a486eb246e539fce1f77d468d851194c2dcd803c6fc6e6873f024b73"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_147.csv",
+      "sha256": "14e45cac6cf607478e60bc6695e3463de28f7550ee3275dd320681d2a6bb3de0"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_148.csv",
+      "sha256": "1622f0246d9793362a1898e3f0336473f9996a55e33380a8e422d3f61418c686"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_149.csv",
+      "sha256": "00c0ec3f369f34d69841a7a774264cc7eefea2a5386201a814fa436fc2cd0c05"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_15.csv",
+      "sha256": "ced0ff5d484a91753f344de13c42d91913aad22f8d2e42a543912a2c2e56d33f"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_150.csv",
+      "sha256": "74fe2907c34769c49d831e3ce320c39185886295e2861b244d041ecd9b13028e"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_151.csv",
+      "sha256": "5b7772b4166bd383fd42adead01dbf8693bbb9041256795a12356c1bdf8969d8"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_152.csv",
+      "sha256": "f4f5684c7922bf170c77dd784afa81bc4be62edc9e0362f21e1df781af836a0f"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_153.csv",
+      "sha256": "f9b6cfa126a8ed7c739226f96072a72f3e0436094af4494fc1fb10ffeea17a29"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_154.csv",
+      "sha256": "2fcc1c039de9c87005b2f4b438e0a419881b88165c72169cc7def123a58c9a80"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_155.csv",
+      "sha256": "09eca9df114de21020c0a72825de446fcecc5ecaad740f58d40c54a4f8e8a003"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_156.csv",
+      "sha256": "24090b16639939040728a12a01edea8a4b0f5e15bf04f4edb6c3be4632a9f86b"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_157.csv",
+      "sha256": "02285ba9496e57f80d7e778e217ab9cbe9bb743b54006f7e11a3084d106926e6"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_158.csv",
+      "sha256": "919179475de04044b9393f67f3e3223db084ca56c2db5c5f96e83085c00a0afb"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_159.csv",
+      "sha256": "574545ca7b80826e1374f9f36adef30d45a051cd32df40713359ec14da9e634b"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_16.csv",
+      "sha256": "2684e9d77efdf0a86be50cc94a4afffb7fb1f668e9ff031356cbfa0b37a2a4b9"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_160.csv",
+      "sha256": "68e050de7bb5527b2fdea09603c00c5f3b15a8f3c1795a07959df8dd7b24d7ea"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_161.csv",
+      "sha256": "4c10d063c09aa5ef63f378c9cc573f57c976053853213942f5cb671e652a5459"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_162.csv",
+      "sha256": "b4a159b28638e85caf09c7f46ccdc27dafa526402b9d7e188224db2edd040486"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_163.csv",
+      "sha256": "3385a1ab0a9498368aae83a21686768809622e2f1815cf3503f4d259a494a5d1"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_164.csv",
+      "sha256": "1a14d43bc453465b957774b3b6956572312586968fb59bfd4562d7e2587f992e"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_165.csv",
+      "sha256": "7f923ebf4a40fe3e5cf5c989f75b0ad8f09df320b995c6b4b9851d6b44752837"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_166.csv",
+      "sha256": "9878912ca395a020b4f85720b4792d295ae04215d2f813b276fa14cdce60a4bf"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_167.csv",
+      "sha256": "6b4b951f1ab95a9846b37d462eadc619c9fbf479bf350c8941adf8694e34ee51"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_17.csv",
+      "sha256": "a807c6c3b35490b53caa851f51ea85db7963c1dd90879104caf2dc935961d364"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_18.csv",
+      "sha256": "8e79b2a10e9d24b95c5168112ed7b2549dc8a6588045db842e405f83ec421e78"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_19.csv",
+      "sha256": "ee00ab1913579dc371a06a4c24bf6ccd15d209eb545cced1d261dabc3095748f"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_2.csv",
+      "sha256": "07516831f44ff2cc0a1647d3e9cfcbac92415890d3666cdc0d658bcef73a14b9"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_20.csv",
+      "sha256": "50d7c654b32f197c6b4a745e4b69f47dadf355e521ada67f3730458b0d4cf1c8"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_21.csv",
+      "sha256": "e4a9b6b51c70dca5574b52ed7dd984f92503e09073e9630e33fddf343ea47fe2"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_22.csv",
+      "sha256": "32e92ff71011b68427d4fcf440a5db3f1f701bf00ee72871cb88bcaa4250d84a"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_23.csv",
+      "sha256": "fc791b23b0b8d9ef2cca0d584e3f2bdfeb11db1645f6dfece9b954972641102a"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_24.csv",
+      "sha256": "fcf0c24fc37d96c25486da78ddadc54de168d69e6a3b80782d82782bb04b89d7"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_25.csv",
+      "sha256": "0e53bf79eae8432b0700f641565c85bd8c947e9430f20e07d59b1b60de48bd2c"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_26.csv",
+      "sha256": "b8e6e12fc6be9f6b4d1a3a29d7fff1bc591a3fffed6e08a49e1bd65dad5d46b3"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_27.csv",
+      "sha256": "525a33129b0c04242a31c24e84935d3a2a235675abc80598a7734aa4fc25708d"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_28.csv",
+      "sha256": "389615adf4dd1463674484f973b4dcc8b17c80abfcae9cec332592cc424d4ae4"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_29.csv",
+      "sha256": "833379b4a731636e746498f3333638eb776c60959518f10fff1bea2fb9a48df5"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_3.csv",
+      "sha256": "75c7d9c67a93f1e3b462e7300de22e83631fde009e170db9025923ba72cfd581"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_30.csv",
+      "sha256": "10555358ed52d52017b4a877ecff80c2efc64f5c127ad65366744dc62b42e909"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_31.csv",
+      "sha256": "95638c553539659637e2d45c23830cfe1c0dfca495a268075723abbeeb256d14"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_32.csv",
+      "sha256": "a7cde8a2cb7df5bf1b16471184a11ae14253e2d182fe0949473ae102ca5539a4"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_33.csv",
+      "sha256": "578c5ac0eaf167c556cf4045f03112475324af4f74751d3deb9d9a7e79c66b26"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_34.csv",
+      "sha256": "794e182bfd80bd8766c286ae2291cc44586a7681e69e145edd9630065820c27d"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_35.csv",
+      "sha256": "d83100722fdc788393056315e3cabde12d86d664a47f41ff876f4c7d9aa01c56"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_36.csv",
+      "sha256": "c7df9a43aab1d4b8f2bab90cd5ca25908a1970b46ca553a26d0f358050dcdf1c"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_37.csv",
+      "sha256": "0ff2ed389a9002455dde46249ffb820d3d0438840af4029682e44cb93ea0a6d5"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_38.csv",
+      "sha256": "e9839ddf5f06a33fbc8817a1a6bcb92cc725e2868b64a65dabc9882c1f9af0e7"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_39.csv",
+      "sha256": "ad0b75a8829ac79b8ba451ee1304897510ca2b6db44af5d72f59d8a36b5165fb"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_4.csv",
+      "sha256": "bae7435ff10f52336341328569af56f963f7625bb9340eb867397249647d9d81"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_40.csv",
+      "sha256": "21e58ee9d8e61cec60f6e9f5b573054b0b011621431bfb21d36fdaf2a7d7970d"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_41.csv",
+      "sha256": "191a1d69d06a63a92a088be7b4654a3be237fd988df51df2408a5594c4e66737"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_42.csv",
+      "sha256": "1262d296315e5635d576c0e26e86920eed6f8d2c622edde99f848a737eb1efc4"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_43.csv",
+      "sha256": "117b48e7919c63d13a9d97b04c4e171c45c17a2f1f67b9fd66d90942cdca87ce"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_44.csv",
+      "sha256": "4a8859c7cde91329100c42d90f515975ef863a7b46e6e3f7fb9ae2b816977927"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_45.csv",
+      "sha256": "1ba37fae00c27da30ba63a03a2a758dadc8766103088767365726aecc8f2708b"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_46.csv",
+      "sha256": "fa5d4cb7cf840982468ba2163ecd57790bac2f38e1faf6e3aa86aeb36831a946"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_47.csv",
+      "sha256": "5a2699fdef3d23d1441187c77f36448eab81ac4ecd3d96a685be3ea5db9bd4ea"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_48.csv",
+      "sha256": "4e634c45138ab854b63a53033c35700ebbbce202dd0fd6a4f0787873d905b0ac"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_49.csv",
+      "sha256": "5eacf424774e1cae170dab86f3e7f2c57c206c648b86ad3e100118f07cd79741"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_5.csv",
+      "sha256": "7a93bc68d9a454533bc290c41bf73e70451543d12cc52decf944c5c8c7ac233d"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_50.csv",
+      "sha256": "1a05084a5d2c1377c4a5a62eca8c743bff7b5af06d35b3a2265817dd9e50bc4d"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_51.csv",
+      "sha256": "d9497e86e1840608335fb3e68536e0dae7133fd731122653955958b1b3744916"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_52.csv",
+      "sha256": "d228692cae6bbfb492c8b403e4fa4137784d06f26d4e9b2458ba2c6fef6e7d64"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_53.csv",
+      "sha256": "078a1b50147b2aa9ddd3dd881d4137d05854ae4b98345d0f9f337a3e2b8bfe14"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_54.csv",
+      "sha256": "c29144c579387ff04c53ea7f58c28b04119ea49894d381d53640609bb984517a"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_55.csv",
+      "sha256": "d08846a960965a6373ce3f3ce9086e45df4ceda5521ce25c0a7b6426978e2cbd"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_56.csv",
+      "sha256": "1171f5fc18c194f436f57c02b36049303bbca1e8a558037cec37388d5942a3a8"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_57.csv",
+      "sha256": "1fdc66fa1966255904e6601ca66a96d4114c29aee8edd4df8d63ceed90ebadc5"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_58.csv",
+      "sha256": "f3e0a5768ff18ae9c72dcdadf3101b8adb2e5cb2a0b65b10a5839ba3116877a4"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_59.csv",
+      "sha256": "3138f639822e9a789a28be3b40d9c44494afa4a3c16f0dc40d51939d5d1bdd8c"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_6.csv",
+      "sha256": "88f1fd5489a4727418c889c7d33bb2f6c6f28548a5ab8d91377f869bc8174c32"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_60.csv",
+      "sha256": "f30ef6dea76ff0df1f13665747647eb2321616458e288e80c7a56213a99cb494"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_61.csv",
+      "sha256": "e2080971712ce5f09015d48f826b6631926cdf0d54769557bfdb73cae93dd14b"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_62.csv",
+      "sha256": "72b1c2bcc5fffec889c5e748b37050ce43d1d036abd8db705ca8c3f12e4daa5b"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_63.csv",
+      "sha256": "05d007a50d094f5da4bc21085cb9392470c0503f689ecfd37be8d9b875f40897"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_64.csv",
+      "sha256": "eefcc8df05800fa0372f9fb1f8760a7fadb96592fe1f92e50cb5ed9b6014d247"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_65.csv",
+      "sha256": "10d92b4ef83bcc2727ffecb72ffba87cc3fcfbdc348a854cb708b2e41ce8f072"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_66.csv",
+      "sha256": "7d7ae6312d99fea23a8336dcbf79d25b557594490b842ae313276c9f12e835f6"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_67.csv",
+      "sha256": "a03b9e4a297678028fc8ca909f9c39ff0f7be80cd1736b4bf53b78ea70baab61"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_68.csv",
+      "sha256": "bc43837234838eea84b78984dca0e3bd4e35fdd63298be027644d71557b93921"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_69.csv",
+      "sha256": "dd084d9efe769bea4f9e86c5dfcd2b9540fd02cecf862c6be4a1e082111c5d35"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_7.csv",
+      "sha256": "0462cc80c7e2f52c4922ab157a9ae7d1274dab23a7ca001cd1e1118e5e6c36a4"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_70.csv",
+      "sha256": "700dcec7790b260d1dec20860b2fdda73068e933bbd5daeba5b60f06b5b81318"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_71.csv",
+      "sha256": "0536576273ff6c0eebe6d205bdf7d1becd549752b041ca640ba8b5be3b934ebd"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_72.csv",
+      "sha256": "5c0f1be59afa9e57d2f23862d961bf5ca49674bda7efd17e1f3736b77495a959"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_73.csv",
+      "sha256": "cd83bf7b0c52aab03624048d2bada9507ff1111fb5e5b224a8fa4d3f0dff3475"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_74.csv",
+      "sha256": "68fbd04f80e3ecef4a18dccbb40b0ba14367315b461f3aa9192a5e6028bb6331"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_75.csv",
+      "sha256": "b9518c7ebffef3cca5d93a5e6261178d2aee2d087579f2edcfd3cbb8e4b3cc61"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_76.csv",
+      "sha256": "f34a425c830406ee07bfa3913bb2898f2178106234c98fba5d8f8342819373c6"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_77.csv",
+      "sha256": "02096112cb8baf37f9272f45c0860f8d5a03b1d870811c79f215e4be2a001897"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_78.csv",
+      "sha256": "11db1f0eee9a0eda2cbc8b723eb52dce0213d3cdbdc5a96f828c6c51ddc99a40"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_79.csv",
+      "sha256": "f828ad4e03687a3c94d60b2fcca611ad722bff04e561a923a244101af8863e42"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_8.csv",
+      "sha256": "da7551ac8a2daae9e1601e93ebffad7b424812c28d081f2e0baf5692d093e85b"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_80.csv",
+      "sha256": "0fcdfe70a778ab63d433b124c99de6f4874e490b2badcef0c5ab456015ef7a79"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_81.csv",
+      "sha256": "78bb72e3e70a6aa15fd755b6d05e8283da80f4b3ee543d025b3749221e1f4fe3"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_82.csv",
+      "sha256": "a73809b69b8f5f54627569d86f829a218a1b54102430a9c63be894e981246cdd"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_83.csv",
+      "sha256": "5f548a91fd3dd379a11674c26813f0d42bae53a5179a93ab26d4aa4ce3fe6a9c"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_84.csv",
+      "sha256": "14730e141e810a7da0e31dbd07391ef9503f5d5533d49d5262b0599cf9947576"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_85.csv",
+      "sha256": "940696fa3e9c646442f47581ddb7e9f73d7bc5706588fcfe6601e9eadb36a244"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_86.csv",
+      "sha256": "b3b0ebd933a02becbe6bdcfb85bf348cd7076849bd1e0f68b288d3a783cb5241"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_87.csv",
+      "sha256": "152b107b3904bcc849ad99b19cdf6122e29969059575fabba297458b3b4b4b2b"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_88.csv",
+      "sha256": "6f3c1c35a5b15e51e2fc077670f80d3a6a348c85a149e221f11ec30946a1a87e"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_89.csv",
+      "sha256": "0b74f566b75fa126e3547f24d6f87bd2c23fc252fd9f93fecfcaf9a38772934e"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_9.csv",
+      "sha256": "33668e96bd1af5b37a09e8fb6e54beebe7f6bb537d2c73d730d11b40a90af5b9"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_90.csv",
+      "sha256": "5ef28bbd84399470c897159f785e64ce0ec49af08ce0d751525bd735d2a3e673"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_91.csv",
+      "sha256": "8540d724f5ab5f21a13456119639475d3d7a7f8a1e7f6a2a274b38707989ef67"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_92.csv",
+      "sha256": "9dd21aeef7aa9bd8688c0c182f7221e6741e0c91a6561c40741afba3a949735b"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_93.csv",
+      "sha256": "89f984509bbbd79e76ceb338afddc0b6c81b02fa759402626f48a0f8b5d86192"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_94.csv",
+      "sha256": "41cb2997af09dbe265d6acb2391e43b597546524f81217640ac443ebb170d921"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_95.csv",
+      "sha256": "f7fc2708ba950515e576a81e701582d6b495f9690ef49a7f5b9998608d3db25c"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_96.csv",
+      "sha256": "d5be14c0c3d9233601a9f225ef22110860eb42727619cc0521c855f72b041eed"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_97.csv",
+      "sha256": "c82d0ae19935db798f04828ee0070d3969eb218291f51da0f3c4068b514dc6c1"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_98.csv",
+      "sha256": "ae8e73c65dfeac70fb77e2bfcbf252f0d9d07229e9b21db0092192c0b08cf074"
+    },
+    {
+      "path": "/home/rzhoubf/projects/mls-final-project/data/raw/lcl/csv/LCL-June2015v2_99.csv",
+      "sha256": "d2cf082376150d8942989c5babf935882b25be0b5ec28179afe6f32c94f8b302"
+    }
+  ],
+  "start": "2013-01-01 00:00:00",
+  "end_exclusive": "2013-07-01 00:00:00",
+  "train_end_exclusive": "2013-05-07 16:30:00",
+  "val_end_exclusive": "2013-06-03 20:00:00",
+  "lookback": 96,
+  "horizon": 2,
+  "features": 6,
+  "max_forward_fill": 2,
+  "selection": "training coverage only; no test-based selection",
+  "timezone_policy": "naive source clock; duplicate timestamps averaged",
+  "clients": [
+    {
+      "id": "MAC000002",
+      "file": "client_0000.npz",
+      "sha256": "31198b5dfb6b1469c0ddc112a2284a324526b7c2ce525d169cb50ed5b9721666",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000006",
+      "file": "client_0001.npz",
+      "sha256": "2c1272ad9a3515e1bde76ad3966322ad5f8a08551646ef85b23f73baeae1cacb",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000008",
+      "file": "client_0002.npz",
+      "sha256": "1fbc8621cfa4952cfdb1931ec7bdadfb26f0a7f9548d5d530c1417a5281363ff",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000009",
+      "file": "client_0003.npz",
+      "sha256": "bf0a22304f58eaf2ccc6e7193670e17f9e9d520a4b1039ce417f43269304b3c9",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1197
+      }
+    },
+    {
+      "id": "MAC000010",
+      "file": "client_0004.npz",
+      "sha256": "7dda4064468da7f563625585f7705ba53c1843597fe5c4b16b95fbcaae03fd88",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000011",
+      "file": "client_0005.npz",
+      "sha256": "a269b9b6a88bfac3d336d4dc04101aad24d8358bab456065453cc4b0daaecf42",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000013",
+      "file": "client_0006.npz",
+      "sha256": "4b7c25cd6c4c3fe6d5f050b971abf60c68cb2fd053cf09f08f3b7296ccc3ad8d",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000018",
+      "file": "client_0007.npz",
+      "sha256": "e61938e9f7a496a7e50d8af12919f41592ff11897944e32074273241a4b4266c",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000019",
+      "file": "client_0008.npz",
+      "sha256": "ab32f7ba404cc90e003ba87a667c2964ec1b7673a976dd935e8651a7fefc1204",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000021",
+      "file": "client_0009.npz",
+      "sha256": "bc5b4fdc5ecfdbed5d3425e868069f0dd5b4213babde6f4fa24a1c9042d5421a",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000027",
+      "file": "client_0010.npz",
+      "sha256": "987cf76322dae9d3a7c305f588175901fcb2421022f3f23daa840c25c9f8c69d",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000029",
+      "file": "client_0011.npz",
+      "sha256": "fd5d5fd5c2fdca6ea64680de3b5663176385f6d19d1d6dcd553a70aa4259538a",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000030",
+      "file": "client_0012.npz",
+      "sha256": "0c45b5a846c707574a3c97a1b81f26d7e59423e584c8cc44796e43ebdbc77d6a",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000034",
+      "file": "client_0013.npz",
+      "sha256": "883ba836b65158c84adeee2cac6911fdeb088f346fb9996adb17bf876cf6b6ee",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000036",
+      "file": "client_0014.npz",
+      "sha256": "6e477f695d8d5b14535267db815f44f1d157165f83712f0f613f95a27edd2f56",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1301
+      }
+    },
+    {
+      "id": "MAC000037",
+      "file": "client_0015.npz",
+      "sha256": "6c9b72847bb1ecc3a654f02940152121ffa1f584933d4353fbae4d4b31865644",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1301
+      }
+    },
+    {
+      "id": "MAC000038",
+      "file": "client_0016.npz",
+      "sha256": "b050f4855df08cfef6e346b01cd5a00d50d5951018cc48d84d1d257770e5c358",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000039",
+      "file": "client_0017.npz",
+      "sha256": "76264239d98420fc5e5d71e64267aebee4808681d9a680a71eabc079dfdbde4a",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1230,
+        "test": 1271
+      }
+    },
+    {
+      "id": "MAC000040",
+      "file": "client_0018.npz",
+      "sha256": "3f0ce9960ef50cf94870e3498759551d01a216c72488702bc6fbcad416187067",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000041",
+      "file": "client_0019.npz",
+      "sha256": "26b98c963bb455f4593bff48b759dc2f38ccc908636dfd9c8f5cbde93208bee6",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000049",
+      "file": "client_0020.npz",
+      "sha256": "47309759cab213209d3b8897818bf782610c2fe9448736d499c15ac0d582ddbc",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000054",
+      "file": "client_0021.npz",
+      "sha256": "f4a70178ab9433c594893bb45eb62d7a4ee9f8352e01633e2629aa57fe858b2c",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000055",
+      "file": "client_0022.npz",
+      "sha256": "c83257e4188c713ec1a3b0b9fc8f220df85b49414c3d0b32fac74a6d32db2bb7",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1301
+      }
+    },
+    {
+      "id": "MAC000057",
+      "file": "client_0023.npz",
+      "sha256": "684e700e16abeab28116a38222be064fe9cc295165b4c39f3ff711ffcb38491e",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000060",
+      "file": "client_0024.npz",
+      "sha256": "de30ab1a8ad58d7bf31decb6770e525e74bacd7ca6eeca85c625ab41e5c55297",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000061",
+      "file": "client_0025.npz",
+      "sha256": "d3f5bc3587ddb93cd8e0299c2af1934eae860271d37f2d17a626e8a3fba3ec46",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000063",
+      "file": "client_0026.npz",
+      "sha256": "a79eb7f64f7081bb49ad03fea42577f20d89726828cbc7ab4cfedf08fd0f7414",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1300,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000067",
+      "file": "client_0027.npz",
+      "sha256": "0a0791eb4313ab500c435e538208721d4c17e10e8a6a2bdb83bf97b67ad715de",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1301
+      }
+    },
+    {
+      "id": "MAC000069",
+      "file": "client_0028.npz",
+      "sha256": "e8ebcf41f950e2aae7683d030b628ae04204534e0b7921d6425d6efb9f05ff8e",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000070",
+      "file": "client_0029.npz",
+      "sha256": "e15098bd409a61c4ec9e62ff3d9e42f3383b9200126ff8c3739fb82ee28ee83a",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1298,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000072",
+      "file": "client_0030.npz",
+      "sha256": "9b922526526c5328ca73616c2313e9283a11b3340c5efccd01bceaac00c448d0",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000074",
+      "file": "client_0031.npz",
+      "sha256": "b6763ac4ec68ac276bc42818d3c0e475148be61d9c093609ca5db1aef37b2106",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1298,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000077",
+      "file": "client_0032.npz",
+      "sha256": "68d53e5bd64dc5d3860ceaa9056e21a97552ef37f681bafd7bfadd2f032380f1",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000078",
+      "file": "client_0033.npz",
+      "sha256": "88c14571d275ce316181652f8cc22ef97c0d93aab1dbc1823b5c3abe6b9883fc",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000079",
+      "file": "client_0034.npz",
+      "sha256": "8ef7e6f32d6f7712384c4b6cd01109926e1243eed3011dbf69426e19afeb21d5",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1158
+      }
+    },
+    {
+      "id": "MAC000083",
+      "file": "client_0035.npz",
+      "sha256": "3b6db012669a6c13c898491517fe47633eca01a4a6b89614437e56c6ef81f283",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000084",
+      "file": "client_0036.npz",
+      "sha256": "c67c046cb3e3f51bc1eb509982b831b03ad9666418027a6c920ac83768f0aea9",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1300,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000085",
+      "file": "client_0037.npz",
+      "sha256": "cc067ed448b5b14bbb73f3e0e03a33702223efbce594d8a9d06d44debef651e0",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000086",
+      "file": "client_0038.npz",
+      "sha256": "77ffd123c1252847a49d8f2df942e15e1d465e7702b861c23de87961dc5a4334",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000089",
+      "file": "client_0039.npz",
+      "sha256": "f3bce4009c2977c2bcc3bebbd9146d8b3051ccdfcffb65a795bb04f3cf3892c8",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000091",
+      "file": "client_0040.npz",
+      "sha256": "3fa109998b6456eda79138b2229ac0278d2687abe8bef1acdfd444add4b73488",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000094",
+      "file": "client_0041.npz",
+      "sha256": "77e6324b41c34668dc4e2a14219ad8a2a7ecb9b7da014aeabd1b61c0d21fa9b1",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1300,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000097",
+      "file": "client_0042.npz",
+      "sha256": "0f814263b32445c08e5509cc2ffc30eb6813878c96d66f82933b67ae7c582510",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000099",
+      "file": "client_0043.npz",
+      "sha256": "b78131c0aa4ee7b86b2311ab7857105fdfe3a3a39ac13da147a94ae9235fa09e",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000100",
+      "file": "client_0044.npz",
+      "sha256": "6b35eb00c3cc56088b9364f6649e2d588b322d34a69d197ac8185cd80dc28c9f",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000101",
+      "file": "client_0045.npz",
+      "sha256": "0fc3f31e6ddfcc0652f366e6229549fa82f8bd46795d82ee1faa7fad0c86439f",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000102",
+      "file": "client_0046.npz",
+      "sha256": "83fac04aafe02464688b410545e06095fa7a30cf3737f821a83784fa8794fce0",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000103",
+      "file": "client_0047.npz",
+      "sha256": "c24c0b662879b6ffe13cf3801dd19bfc23396be47b0777499c9cf29a425c9b5a",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000110",
+      "file": "client_0048.npz",
+      "sha256": "a6edee7e340df06f3506392b938e30044f756dedd8463fa456c67c948761b8a5",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1300,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000111",
+      "file": "client_0049.npz",
+      "sha256": "4de3870d66e079912114ae79d7d065320c5e5c1f451c3be08133f6585e593c2d",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000112",
+      "file": "client_0050.npz",
+      "sha256": "cd3cfb20af8bde1dfb4a806cebd725e06424d5e89b3ead9aa4f73ed998fd73e1",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1300,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000115",
+      "file": "client_0051.npz",
+      "sha256": "5963620bbdcaecea85b06387b35e5e7ff32c26d5b69d15f2c43a3457948d39d5",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1300,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000116",
+      "file": "client_0052.npz",
+      "sha256": "e59c201645f06576789e5408a22a75d9abbfe1d3c904e63cbf1f20bf90ba3b65",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000117",
+      "file": "client_0053.npz",
+      "sha256": "8b6b692e3b10c71a2f44a7cb57d41679a426303a262bfd739f0a2e549d5f3de9",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000123",
+      "file": "client_0054.npz",
+      "sha256": "6f6534f38b072f76495bfe2d7791f26c75e4ef4323522d59e1d7ba8f3c0efc6a",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000127",
+      "file": "client_0055.npz",
+      "sha256": "9a2faf3a70dcf793430114c03e597afdc385defd0299f6bbc3da6e7bf766bebd",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1301
+      }
+    },
+    {
+      "id": "MAC000128",
+      "file": "client_0056.npz",
+      "sha256": "267c6b6a4dc6cbbfcf71ad20d235b39b1ef19a00ef86f7618cdb8103a2c1af0e",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000130",
+      "file": "client_0057.npz",
+      "sha256": "05862fb7cfe7b265d3dd79002884dc8841a4e02408447c73e5edcb9a9a41ab96",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000131",
+      "file": "client_0058.npz",
+      "sha256": "6faf74939189d7aaf0ad94055e6b5f51b785bc7612db87bae07f43fcf6c6dbc2",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    },
+    {
+      "id": "MAC000137",
+      "file": "client_0059.npz",
+      "sha256": "2f60fd09931f6e66e7eec57523cb542aa3a34378ba8601cbc4b529aa4446941e",
+      "train_coverage": 1.0,
+      "duplicate_rows": 6,
+      "counts": {
+        "train": 5984,
+        "val": 1302,
+        "test": 1303
+      }
+    }
+  ],
+  "fingerprint": "9e4d51f60b85f8ad6faf3e2e779de7c122e994f1bb2a5ffe839d27f9caa8c7a4"
+}

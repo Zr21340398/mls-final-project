@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-11-12T07:33:20.686835+00:00",
+  "config_fingerprint": "40a356fb73d868b030802d2645f93d59d3d7a25a2cd3f62b6dc6989ed2b1f865",
+  "dataset_fingerprint": "9e4d51f60b85f8ad6faf3e2e779de7c122e994f1bb2a5ffe839d27f9caa8c7a4",
+  "dataset_path": "/home/rzhoubf/projects/mls-final-project/data/processed/lcl_60",
+  "source_zip_sha256": "2a9026ec0a0e2f914ff2dc0ab95841cd20981e5004d6a53be4210f904ef23ca5",
+  "source_files": {
+    "energyfl/privacy.py": "759bcc857eabc1782e51732a9d7271dc63bf9bd6ee7e869e5ee2f9a3e60b331c",
+    "energyfl/profile.py": "47eec0fac09aa260dfba16088c7de617e33112907c40433531fe2fcbc8ba67a4",
+    "energyfl/simulation.py": "1edabd95e8cf58660db127e6f05d1e5dbded0a35b388292f0b9d739266548cd0",
+    "energyfl/data.py": "66e633c0e96bd19c4a9cb5bdbaa8580c966003de94e4569a7550129d60094d94",
+    "energyfl/__main__.py": "7519cda43ef939d3c7d8325bbef5cb74b305cafc8c809b1b6230d1ae4b41559d",
+    "energyfl/download.py": "1789b5278ad3d2bf53df7fbe67b767c99fe3973227b1de4c31b380981dd36557",
+    "energyfl/reporting.py": "b45fb9aa1c4da5fd322596fbc39197429877efcf0c95e65e832fd0939e2d16c5",
+    "energyfl/bootstrap.py": "8e8bb42ccc17543301c3b827477b5ab559ecbb9a8de023cb1ddd284762ce0065",
+    "energyfl/common.py": "3e6c24e45719540b9b1e1d0899695402be4a90d8999094cf828929f6c02f032c",
+    "energyfl/__init__.py": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+    "energyfl/models.py": "26a8e31f2df36a3908602ea675d98c9cadb76da54a13dccf95989046835bfa51",
+    "energyfl/engine.py": "1b4ea647124ecbd9e8bba87906db8a2f7593be447d4f773e31fa2e792da99bbf"
+  },
+  "environment": {
+    "python": "3.12.9 (main, Dec  2 2025, 09:07:03) [GCC 11.5.0]",
+    "platform": "Linux-5.14.0-687.26.1.el9_8.x86_64-x86_64-with-glibc2.34",
+    "numpy": "2.2.6",
+    "torch": "2.8.0+cu126",
+    "cuda_runtime": "12.6",
+    "cuda_available": true,
+    "gpu": "NVIDIA L20",
+    "command": [
+      "/home/rzhoubf/projects/mls-final-project/energyfl/__main__.py",
+      "train",
+      "--config",
+      "reports/plans/hpc4_core_v1/core_centralized_s7.json",
+      "--run",
+      "runs/hpc4_core_v1/core_centralized_s7"
+    ],
+    "pid": 3894244
+  },
+  "synthetic_data": false,
+  "privacy_scope": "Research artifacts include non-private validation metrics. Do not publish this directory as DP output.",
+  "aggregation_backend": "plain",
+  "security_claim": "No real secure aggregation; masking_sim is a correctness simulator only."
+}
