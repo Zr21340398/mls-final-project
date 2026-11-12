@@ -15,7 +15,7 @@
 | 笔记本扩展验证 | **36 次训练与结果分析已完成；查看结论并备份归档** | 主线 2.5；归档命令见 2.4 |
 | L20 正式实验 | 从 GPU 检查和节点校准开始；训练短测按需选择 | 第 3 节 |
 
-第 1–2 节保留 Windows 预实验记录；正式实验在服务器 Bash 中按第 3 节执行。服务器环境与数据准备已完成，从第 3.1 节提交 GPU 检查和校准作业开始。
+第 1–2 节保留 Windows 预实验记录；正式实验在服务器 Bash 中按第 3 节执行。服务器环境与数据准备已完成，重新连接服务器时先看第 3.0 节，再按需要从第 3.1 节提交 GPU 检查和校准作业。
 
 ## 1. 真实数据 pilot（已完成，供回顾）
 
@@ -203,6 +203,45 @@ foreach ($job in $jobs) {
 
 以下示例使用 `~/projects/mls-final-project` 和 `data/processed/lcl_60`；若你的实际目录不同，先替换路径。环境初始化以服务器已验证的方式为准；若已按照 [HPC4 指南](docs/HKUST_HPC4_L20_GUIDE.md) 建立 `hpc/env.sh`，在计算节点通过 `source hpc/env.sh` 加载。示例账户 `mscaiehpc42026` 与分区 `gpu-l20` 沿用现有指南，提交前确认账户授权与站点设置。
 
+### 3.0 退出后重新连接服务器
+
+每次重新连接，从自己电脑的 PowerShell 执行：
+
+```powershell
+ssh hkust-hpc4
+```
+
+连接后进入服务器登录节点，在服务器终端进入已有项目目录：
+
+```bash
+cd ~/projects/mls-final-project
+pwd
+squeue -u "$USER"
+```
+
+如果项目实际放在其他目录，请替换 `cd` 的路径。已经提交的批处理作业会由 Slurm 继续管理；使用 `squeue`、`sacct` 和日志检查状态，确认旧任务结束后再提交续训，避免重复运行。
+
+**提交批处理作业：** 在登录节点进入项目目录后，直接执行第 3.1、3.2 或 3.5 节的 `sbatch` 命令。`scripts/hpc4_gpu_check.sbatch` 会在获分配的计算节点自动加载 `hpc/env.sh`；第 3.5 节使用的 `hpc/run.sbatch` 也需要包含 `source hpc/env.sh`。可以先用 `cat hpc/run.sbatch` 检查。提交成功后即使断开 SSH，作业也会继续排队或运行。
+
+**在交互式计算节点手动操作：** 先从登录节点申请资源，等待出现计算节点的终端提示符，然后重新进入项目目录并加载环境。例如 CPU 节点：
+
+```bash
+srun --account=mscaiehpc42026 --partition=amd --nodes=1 --ntasks=1 --cpus-per-task=4 --mem=16G --time=01:00:00 --pty bash
+```
+
+成功进入计算节点后执行：
+
+```bash
+cd ~/projects/mls-final-project
+source hpc/env.sh
+which python
+python --version
+```
+
+`hpc/env.sh` 应加载安装环境时使用的 Python 模块并激活服务器 `.venv`。如你采用了其他环境配置，请使用实际的初始化脚本。需要交互式 GPU 时，在登录节点按 HPC4 指南申请 GPU 分区，再在分配到的节点执行相同的 `cd` 和 `source`。账户、分区与时限按当前授权调整。操作结束后执行 `exit` 返回登录节点并释放交互式作业资源。
+
+环境和数据已经准备完成；重新连接只需加载已有环境。无需再次创建虚拟环境、安装依赖或下载数据。
+
 ### 3.1 通过 sbatch 检查 GPU 和数据
 
 在服务器登录节点、项目根目录执行。确认代码已包含 `scripts/hpc4_gpu_check.sbatch`，且 `hpc/env.sh` 能加载当前节点的 Python 模块和虚拟环境。示例账户和分区沿用现有服务器指南，提交前按实际授权调整：
@@ -264,53 +303,61 @@ python -c 'import json; p=json.load(open("reports/plans/hpc4_core_v1/core_jobs.j
 
 检查 21 个配置的参数、数据指纹和目标目录；确认 GPU 检查、校准、实验协议及预算后提交。配置生成器的 `--execute` 会顺序运行作业，并使用当前计算节点资源；长任务推荐按下面的 Slurm 流程提交。预实验的分析脚本固定读取旧的 36 次 run；正式数据的逐户公平性和共同模拟时间汇总需要新增或调整分析代码。
 
-### 3.5 顺序提交训练作业
+### 3.5 逐次提交训练作业与断线后查看进度
 
-使用服务器已经准备好的 `hpc/env.sh` 和 HPC4 指南中的 `hpc/run.sbatch`；该脚本需在作业中加载环境并执行 `srun python -u "$@"`。确保 `logs/` 存在，检查脚本中的账号、分区、单卡、内存、线程和时限，然后在登录节点执行：
+本流程由一个 **CPU Slurm 控制作业**负责提交 GPU 训练。控制器一次只提交一个训练作业，等待该作业完成并确认结果后，再提交下一项；无需使用作业依赖。断开 SSH 后，控制器和已提交的训练作业继续由 Slurm 管理。
+
+先确认服务器已同步 `scripts/sequential_slurm.py` 与 `scripts/sequential_controller.sbatch`，并准备好 `hpc/env.sh` 和 `hpc/run.sbatch`。后者需要加载环境，包含 GPU 账户、分区及每次训练的申请时限；它的完整示例在 [HPC4 指南](docs/HKUST_HPC4_L20_GUIDE.md)。控制器在 CPU 节点调用 `sbatch`、`squeue` 和 `sacct`；首次使用前需要确认学校允许从计算节点提交 Slurm 作业，并确认 CPU 控制作业和 GPU 作业可同时使用账户配额。
+
+在登录节点提交控制器（CPU 账户和分区按实际授权调整）：
 
 ```bash
 cd ~/projects/mls-final-project
 mkdir -p logs
-bash -n hpc/env.sh
 bash -n hpc/run.sbatch
-python - <<'PY' > /tmp/energyfl_core_jobs.tsv
-import json
-for job in json.load(open('reports/plans/hpc4_core_v1/core_jobs.json')):
-    print(job['config'] + '\t' + job['run'])
-PY
-previous=''
-while IFS=$'\t' read -r config run; do
-    if [ -n "$previous" ]; then
-        jobid=$(sbatch --parsable --dependency="afterok:$previous" hpc/run.sbatch -m energyfl train --config "$config" --run "$run") || break
-    else
-        jobid=$(sbatch --parsable hpc/run.sbatch -m energyfl train --config "$config" --run "$run") || break
-    fi
-    jobid=${jobid%%;*}
-    printf '%s %s %s\n' "$jobid" "$config" "$run"
-    previous=$jobid
-done < /tmp/energyfl_core_jobs.tsv
+bash -n scripts/sequential_controller.sbatch
+sbatch --account=mscaiehpc42026 --partition=amd --time=24:00:00 \
+  scripts/sequential_controller.sbatch \
+  --plan reports/plans/hpc4_core_v1/core_jobs.json \
+  --state-dir reports/plans/hpc4_core_v1/controller
 ```
 
-复制保存输出的作业编号及配置对应关系。后一个作业在前一个成功退出后开始；失败后检查队列中依赖作业的状态和失败原因，再决定恢复及后续提交。每次提交都要使用新的 run 目录；`--resume` 仅用于恢复已有的同一 run。
+控制器的 24 小时是 CPU 控制作业的时限；每个 GPU 训练的时限由 `hpc/run.sbatch` 控制。按分区上限调整，控制器到期后可按下述方法重新提交，继续观察已提交的 GPU 作业。不要同时运行两个控制器或手工提交同一 run。
+
+**重新连接后查看进度：**进入项目目录，在登录节点运行以下只读命令；服务器须有 `python3`、`squeue` 和 `sacct`：
 
 ```bash
+cd ~/projects/mls-final-project
+python3 scripts/sequential_slurm.py status \
+  --plan reports/plans/hpc4_core_v1/core_jobs.json \
+  --state-dir reports/plans/hpc4_core_v1/controller
 squeue -u "$USER"
-scontrol show job JOBID
-sacct -j JOBID --format=JobID,State,Elapsed,ExitCode,MaxRSS
-# 将 JOBID 换成实际值
+tail -n 50 reports/plans/hpc4_core_v1/controller/events.log
 ```
 
-作业中断后确认原作业已退出，再使用对应计划文件和 run 路径恢复：
+状态表按计划顺序显示第几项、控制器状态、JobID、Slurm 状态和 run 路径。`submitted` 表示该训练已提交；Slurm 状态为 `RUNNING` 时正在训练，为 `PENDING` 时等待分配；`completed` 是控制器已确认训练完成。`failed` 表示批次停在该项。`UNKNOWN` 表示目前未能确认 Slurm 状态，控制器会继续等待而不会提交下一项。`state.json` 保存计划哈希、各任务、JobID 和尝试记录；`events.log` 记录提交、完成及失败的时间。
+
+每个 GPU 作业的标准输出、错误日志按 `hpc/run.sbatch` 中 `#SBATCH --output` / `--error` 保存；指南示例为 `logs/energyfl-JOBID.out` 和 `.err`。控制器自身日志为项目根目录的 `controller-CONTROLLER_JOBID.out`。查询任务详情：
 
 ```bash
-sbatch hpc/run.sbatch -m energyfl train --config reports/plans/hpc4_core_v1/core_coverage_equal_s7.json --run runs/hpc4_core_v1/core_coverage_equal_s7 --resume
+sacct -j JOBID --format=JobID,State,Elapsed,ExitCode,MaxRSS
+scontrol show job JOBID
 ```
 
-续训需要显式追加 `--resume`；重新执行原来的新建命令会因目录非空而停止。已完整提交的每一轮均有 checkpoint，程序从最后一个完整轮次继续；中断时正在执行的轮次重新计算。续训需重新申请 GPU，使用同一 config、run、数据指纹和源码；更改训练轮数也属于配置更改，需要建立新实验。Slurm 不会自动重提本示例作业，需在确认旧作业结束后手动提交恢复命令。
+**超时或失败后恢复：**控制器确认失败后停止，后续训练尚未提交。先查看状态表、训练日志、Slurm 状态与 run 目录，确认原 GPU 作业已结束。代码在每个完整轮次保存 checkpoint；有完整 metadata 和配置时，重试会对同一 run 加 `--resume`，从最后完整轮次继续，当前未完成轮次重新计算。GPU 时限不足时，在重新提交前调整 `hpc/run.sbatch` 的 Slurm 时限，保持实验配置、数据指纹和源码不变。
 
-批量链中断时，先恢复失败的单个 run，再检查所有后续作业是否因依赖失败未启动；按计划重新提交尚未执行的作业，避免重复提交已完成或仍在排队的任务。
+如果强制终止留下 `RUNNING.lock`，确认旧 GPU 进程和作业已经结束后，按 3.0/附录 C 中的 unlock 说明解锁。然后重新提交 CPU 控制作业并追加 `--retry-failed`：
 
-恢复要求配置、数据指纹及源码一致。遇到遗留 `RUNNING.lock`，先确认对应进程已经停止，再使用 `python -m energyfl unlock --run RUN路径 --confirmed-process-stopped`。检查 status、完整轮次和 Slurm 日志后再续跑；无需删除 checkpoint。
+```bash
+sbatch --account=mscaiehpc42026 --partition=amd --time=24:00:00 \
+  scripts/sequential_controller.sbatch \
+  --plan reports/plans/hpc4_core_v1/core_jobs.json \
+  --state-dir reports/plans/hpc4_core_v1/controller --retry-failed
+```
+
+控制器被取消或超时时，先用 `squeue` 和 `sacct` 确认旧控制器已结束。若 `controller/controller.lock` 仍存在，检查是否还有其他控制器后执行 `rmdir reports/plans/hpc4_core_v1/controller/controller.lock`；重新提交原控制器命令即可继续观察已提交的 GPU 任务。运行状态由 `state.json` 保留，重新启动无需重生成计划。
+
+`submitting` 表示控制器在调用 `sbatch` 时中断，尚未可靠记录 JobID；可能已有 GPU 作业被接受。此时停止自动提交，检查 `squeue`、`sacct`、控制器日志与 run 目录，先确认真实情况。不要直接删除状态文件或重复提交；应先解决 JobID 对应关系再恢复。
 
 ### 3.6 其他套件和压缩
 
@@ -321,7 +368,7 @@ python scripts/experiment_matrix.py --base configs/l20.hpc4_v1.json --suite priv
 python scripts/experiment_matrix.py --base configs/l20.hpc4_v1.json --suite dropout --seeds 7 17 27 --plan reports/plans/hpc4_dropout_v1 --runs-root runs/hpc4_dropout_v1
 ```
 
-privacy 默认 5 种设置 × 3 种子，dropout 默认 3 个掉线率 × 3 种调度 × 3 种子。检查各自 `privacy_jobs.json` / `dropout_jobs.json`、DP 预算及 GPU 时限，再参照 3.5 提交对应计划；将读取路径和临时清单名称改为该套件的文件。DP run 可能以 `privacy_budget_exhausted` 状态结束，检查该状态、已完成轮次和隐私预算。
+privacy 默认 5 种设置 × 3 种子，dropout 默认 3 个掉线率 × 3 种调度 × 3 种子。检查各自 `privacy_jobs.json` / `dropout_jobs.json`、DP 预算及 GPU 时限，再参照 3.5 提交控制器；为每个套件指定独立的 `--plan` 和 `--state-dir`。DP run 可能以 `privacy_budget_exhausted` 状态结束，检查该状态、已完成轮次和隐私预算。
 
 量化需要共享神经模型，采用 CPU 推理测量，放在已加载环境的 CPU 计算节点，使用实际完成的 run 和新的输出目录：
 
