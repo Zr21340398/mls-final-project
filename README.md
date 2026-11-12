@@ -378,6 +378,8 @@ python -m energyfl compress --run runs/hpc4_core_v1/core_coverage_equal_s7 --out
 
 记录压缩前后模型大小、验证 MAE 和 CPU 推理延迟。量化结果及设备适配规则以对应环境的测量为依据。
 
+针对三个种子的批量 FP32/INT8 测量、虚拟设备模型分配和结果汇总，请按 [模型压缩与独立测试操作指南](docs/FINAL_EVALUATION.md) 执行。该流程使用验证集和新输出目录。设备档位的时延来自模型推算，实际时延在所分配的 CPU 节点测量。
+
 ### 3.7 检查验证结果并冻结方案
 
 作业完成后在计算节点运行：
@@ -392,7 +394,7 @@ python -m energyfl analyze --runs runs/hpc4_core_v1 --out reports/hpc4_core_v1
 
 ### 3.8 独立测试与归档
 
-测试在冻结协议之后进行。测试使用 run 记录的计算设备，CUDA run 需提交到 GPU 节点；以下命令只示范一个已完成的非 DP run：
+测试在冻结协议之后进行。[模型压缩与独立测试操作指南](docs/FINAL_EVALUATION.md) 提供批量流程：先准备和审阅包含 checkpoint 哈希的数据清单，再显式提交测试，最后汇总。每个 run 只测试一次；已经完成且与清单匹配的结果会在中断续跑时跳过。以下命令展示原有的单次测试方式，测试使用 run 记录的计算设备，CUDA run 需提交到 GPU 节点：
 
 ```bash
 sbatch hpc/run.sbatch -m energyfl test --run runs/hpc4_core_v1/core_coverage_equal_s7 --checkpoint best
