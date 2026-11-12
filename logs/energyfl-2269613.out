@@ -1,0 +1,124 @@
+gpu20
+Thu Nov 12 16:25:50 HKT 2026
+Thu Nov 12 16:25:50 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.211.01             Driver Version: 570.211.01     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L20                     On  |   00000000:63:00.0 Off |                    0 |
+| N/A   46C    P8             39W /  350W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+a9347ebe62e1d828d06825d3e511e1f609fc9834
+round=1 val_mae=0.265284142177248 virtual_s=60.00 epsilon=None
+round=2 val_mae=0.23296770168275388 virtual_s=120.00 epsilon=None
+round=3 val_mae=0.2113535459150712 virtual_s=180.00 epsilon=None
+round=4 val_mae=0.20598346017532307 virtual_s=240.00 epsilon=None
+round=5 val_mae=0.20355089111310498 virtual_s=300.00 epsilon=None
+round=6 val_mae=0.19934128569925952 virtual_s=360.00 epsilon=None
+round=7 val_mae=0.19499474039002285 virtual_s=420.00 epsilon=None
+round=8 val_mae=0.1969064205187574 virtual_s=480.00 epsilon=None
+round=9 val_mae=0.19328543932462425 virtual_s=540.00 epsilon=None
+round=10 val_mae=0.19577785568163364 virtual_s=600.00 epsilon=None
+round=11 val_mae=0.18937242004485677 virtual_s=600.83 epsilon=None
+round=12 val_mae=0.18850377579735908 virtual_s=660.83 epsilon=None
+round=13 val_mae=0.18924625347517818 virtual_s=720.83 epsilon=None
+round=14 val_mae=0.1877854946013505 virtual_s=780.83 epsilon=None
+round=15 val_mae=0.19695213079798193 virtual_s=781.71 epsilon=None
+round=16 val_mae=0.19163868717617738 virtual_s=841.71 epsilon=None
+round=17 val_mae=0.19088389853510696 virtual_s=901.71 epsilon=None
+round=18 val_mae=0.18770032910414108 virtual_s=961.71 epsilon=None
+round=19 val_mae=0.18585876228594406 virtual_s=1021.71 epsilon=None
+round=20 val_mae=0.18701038377005663 virtual_s=1022.53 epsilon=None
+round=21 val_mae=0.18791452608558884 virtual_s=1082.53 epsilon=None
+round=22 val_mae=0.18394410078307352 virtual_s=1142.53 epsilon=None
+round=23 val_mae=0.18612478013538572 virtual_s=1143.42 epsilon=None
+round=24 val_mae=0.18979707693234868 virtual_s=1203.42 epsilon=None
+round=25 val_mae=0.18020115610466714 virtual_s=1263.42 epsilon=None
+round=26 val_mae=0.18179201335222578 virtual_s=1264.25 epsilon=None
+round=27 val_mae=0.1869392323237422 virtual_s=1324.25 epsilon=None
+round=28 val_mae=0.18893107164811435 virtual_s=1325.14 epsilon=None
+round=29 val_mae=0.181195277423057 virtual_s=1385.14 epsilon=None
+round=30 val_mae=0.18602754808128671 virtual_s=1445.14 epsilon=None
+round=31 val_mae=0.1874422339581205 virtual_s=1505.14 epsilon=None
+round=32 val_mae=0.18161148718937165 virtual_s=1506.05 epsilon=None
+round=33 val_mae=0.18321210187284606 virtual_s=1566.05 epsilon=None
+round=34 val_mae=0.19043476350891442 virtual_s=1566.86 epsilon=None
+round=35 val_mae=0.1847072206372721 virtual_s=1626.86 epsilon=None
+round=36 val_mae=0.19068667860657965 virtual_s=1686.86 epsilon=None
+round=37 val_mae=0.18739158041421483 virtual_s=1746.86 epsilon=None
+round=38 val_mae=0.1828628096834757 virtual_s=1747.71 epsilon=None
+round=39 val_mae=0.19117490684244562 virtual_s=1748.61 epsilon=None
+round=40 val_mae=0.1879044663424265 virtual_s=1808.61 epsilon=None
+round=41 val_mae=0.1881250033464924 virtual_s=1809.46 epsilon=None
+round=42 val_mae=0.1861923960446051 virtual_s=1869.46 epsilon=None
+round=43 val_mae=0.1870669320869635 virtual_s=1929.46 epsilon=None
+round=44 val_mae=0.18029938320378358 virtual_s=1989.46 epsilon=None
+round=45 val_mae=0.1852876253675727 virtual_s=2049.46 epsilon=None
+round=46 val_mae=0.1843103807421625 virtual_s=2050.27 epsilon=None
+round=47 val_mae=0.18464469578346554 virtual_s=2110.27 epsilon=None
+round=48 val_mae=0.187045214386803 virtual_s=2170.27 epsilon=None
+round=49 val_mae=0.18719192431591838 virtual_s=2171.17 epsilon=None
+round=50 val_mae=0.19151618918896066 virtual_s=2231.17 epsilon=None
+round=51 val_mae=0.18500724083997247 virtual_s=2291.17 epsilon=None
+round=52 val_mae=0.18212781824899277 virtual_s=2351.17 epsilon=None
+round=53 val_mae=0.18923924209082696 virtual_s=2352.06 epsilon=None
+round=54 val_mae=0.1862811084029126 virtual_s=2412.06 epsilon=None
+round=55 val_mae=0.19040799271015416 virtual_s=2472.06 epsilon=None
+round=56 val_mae=0.18903824223381452 virtual_s=2532.06 epsilon=None
+round=57 val_mae=0.18639089179184376 virtual_s=2592.06 epsilon=None
+round=58 val_mae=0.18493121303171528 virtual_s=2652.06 epsilon=None
+round=59 val_mae=0.18436726608717974 virtual_s=2652.93 epsilon=None
+round=60 val_mae=0.1897527377773026 virtual_s=2712.93 epsilon=None
+round=61 val_mae=0.1867492166592239 virtual_s=2713.83 epsilon=None
+round=62 val_mae=0.18344088990563537 virtual_s=2773.83 epsilon=None
+round=63 val_mae=0.18282497740608467 virtual_s=2833.83 epsilon=None
+round=64 val_mae=0.18451873923400655 virtual_s=2893.83 epsilon=None
+round=65 val_mae=0.18542749651961357 virtual_s=2953.83 epsilon=None
+round=66 val_mae=0.1822139367639897 virtual_s=2954.68 epsilon=None
+round=67 val_mae=0.1849323277992773 virtual_s=3014.68 epsilon=None
+round=68 val_mae=0.18115148654912885 virtual_s=3015.46 epsilon=None
+round=69 val_mae=0.1849362524534848 virtual_s=3075.46 epsilon=None
+round=70 val_mae=0.18669508570296223 virtual_s=3135.46 epsilon=None
+round=71 val_mae=0.18991758926479244 virtual_s=3195.46 epsilon=None
+round=72 val_mae=0.1848912151543596 virtual_s=3255.46 epsilon=None
+round=73 val_mae=0.17906469996511806 virtual_s=3315.46 epsilon=None
+round=74 val_mae=0.18363707642378505 virtual_s=3375.46 epsilon=None
+round=75 val_mae=0.17316267604221602 virtual_s=3435.46 epsilon=None
+round=76 val_mae=0.18099799575570388 virtual_s=3495.46 epsilon=None
+round=77 val_mae=0.18759387957017576 virtual_s=3496.36 epsilon=None
+round=78 val_mae=0.18471808654251434 virtual_s=3497.19 epsilon=None
+round=79 val_mae=0.17819629776714127 virtual_s=3498.07 epsilon=None
+round=80 val_mae=0.18246773960409216 virtual_s=3498.96 epsilon=None
+round=81 val_mae=0.18246857519604825 virtual_s=3499.82 epsilon=None
+round=82 val_mae=0.1807208837872803 virtual_s=3500.70 epsilon=None
+round=83 val_mae=0.1821102895348479 virtual_s=3560.70 epsilon=None
+round=84 val_mae=0.17581873494697645 virtual_s=3620.70 epsilon=None
+round=85 val_mae=0.18415161693584872 virtual_s=3621.58 epsilon=None
+round=86 val_mae=0.18309385063077788 virtual_s=3681.58 epsilon=None
+round=87 val_mae=0.18760187470071518 virtual_s=3741.58 epsilon=None
+round=88 val_mae=0.18899232741601935 virtual_s=3801.58 epsilon=None
+round=89 val_mae=0.17764202500584383 virtual_s=3802.46 epsilon=None
+round=90 val_mae=0.17982451016114248 virtual_s=3862.46 epsilon=None
+round=91 val_mae=0.18535385023733228 virtual_s=3863.34 epsilon=None
+round=92 val_mae=0.1861180367009721 virtual_s=3923.34 epsilon=None
+round=93 val_mae=0.18339560042906491 virtual_s=3983.34 epsilon=None
+round=94 val_mae=0.17901332527266994 virtual_s=3984.18 epsilon=None
+round=95 val_mae=0.18474549416906783 virtual_s=4044.18 epsilon=None
+round=96 val_mae=0.17801727660438788 virtual_s=4045.08 epsilon=None
+round=97 val_mae=0.18251077542291327 virtual_s=4045.97 epsilon=None
+round=98 val_mae=0.17947223415001803 virtual_s=4105.97 epsilon=None
+round=99 val_mae=0.1841281701302339 virtual_s=4165.97 epsilon=None
+round=100 val_mae=0.188411179682165 virtual_s=4225.97 epsilon=None
+Thu Nov 12 16:26:56 HKT 2026

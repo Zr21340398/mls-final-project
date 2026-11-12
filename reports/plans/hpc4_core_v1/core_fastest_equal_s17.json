@@ -1,0 +1,76 @@
+{
+  "seed": 17,
+  "data": "data/processed/lcl_60",
+  "model": {
+    "kind": "gru",
+    "hidden": 32
+  },
+  "train": {
+    "method": "federated",
+    "device": "cuda",
+    "threads": 4,
+    "rounds": 100,
+    "local_steps": 20,
+    "batch_size": 64,
+    "lr": 0.001,
+    "clients_per_round": 12,
+    "scheduler": "fastest",
+    "weighting": "equal",
+    "eval_every": 1
+  },
+  "simulation": {
+    "availability": 0.9,
+    "dropout": 0.1,
+    "min_survivors": 8,
+    "deadline_s": 60.0,
+    "reference_step_s": 0.0015988961502443999,
+    "calibration_source": "/home/rzhoubf/projects/mls-final-project/reports/hpc4_setup_v1/profile.json",
+    "coverage_fraction": 0.25,
+    "aggregation": "plain",
+    "profiles": [
+      {
+        "name": "constrained",
+        "speed": 0.25,
+        "ram_mb": 128,
+        "mbps": 0.5,
+        "latency_ms": 100,
+        "energy_budget": 1000.0,
+        "inference_deadline_ms": 100
+      },
+      {
+        "name": "intermediate",
+        "speed": 0.5,
+        "ram_mb": 512,
+        "mbps": 5,
+        "latency_ms": 50,
+        "energy_budget": 1000.0,
+        "inference_deadline_ms": 50
+      },
+      {
+        "name": "capable",
+        "speed": 1.0,
+        "ram_mb": 2048,
+        "mbps": 20,
+        "latency_ms": 10,
+        "energy_budget": 1000.0,
+        "inference_deadline_ms": 20
+      }
+    ],
+    "calibration": {
+      "report_path": "/home/rzhoubf/projects/mls-final-project/reports/hpc4_setup_v1/profile.json",
+      "report_sha256": "60887d66ea8b48ded735f3f7f6685f8b084e3f64c1c2d360b9dbe2671a1a9576",
+      "workload_fingerprint": "b8066fd8a603e1ae552530ac80248bdf9ced84dda261b68bb8bc1fef8a17d7f3",
+      "base_config_fingerprint": "02756d7f2b019907b63867d465a49afd37d3fd55be461984e0d26728ffd74a57",
+      "statistic": "median_of_measured_local_step_times"
+    }
+  },
+  "privacy": {
+    "enabled": false,
+    "clip_norm": 1.0,
+    "noise_multiplier": 8.0,
+    "delta": 1e-05,
+    "epsilon_cap": 8.0,
+    "deterministic_noise": false,
+    "clip_updates": true
+  }
+}

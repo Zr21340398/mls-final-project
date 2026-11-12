@@ -1,0 +1,216 @@
+{
+  "plan_sha256": "5aefd0c67f4fc40401dacedcd9ad7b7197ce1e9d26f36f3b1ad96e5a32b4e72f",
+  "batch_script": "/home/rzhoubf/projects/mls-final-project/hpc/run.sbatch",
+  "jobs": [
+    {
+      "config": "reports/plans/hpc4_core_v1/core_seasonal_s7.json",
+      "run": "runs/hpc4_core_v1/core_seasonal_s7",
+      "method": "seasonal",
+      "phase": "completed",
+      "jobid": "2268937",
+      "attempts": [
+        "2268937"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_seasonal_s17.json",
+      "run": "runs/hpc4_core_v1/core_seasonal_s17",
+      "method": "seasonal",
+      "phase": "completed",
+      "jobid": "2268941",
+      "attempts": [
+        "2268941"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_seasonal_s27.json",
+      "run": "runs/hpc4_core_v1/core_seasonal_s27",
+      "method": "seasonal",
+      "phase": "completed",
+      "jobid": "2268943",
+      "attempts": [
+        "2268943"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_local_s7.json",
+      "run": "runs/hpc4_core_v1/core_local_s7",
+      "method": "local",
+      "phase": "completed",
+      "jobid": "2268947",
+      "attempts": [
+        "2268947"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_local_s17.json",
+      "run": "runs/hpc4_core_v1/core_local_s17",
+      "method": "local",
+      "phase": "completed",
+      "jobid": "2268976",
+      "attempts": [
+        "2268976"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_local_s27.json",
+      "run": "runs/hpc4_core_v1/core_local_s27",
+      "method": "local",
+      "phase": "completed",
+      "jobid": "2269148",
+      "attempts": [
+        "2269148"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_centralized_s7.json",
+      "run": "runs/hpc4_core_v1/core_centralized_s7",
+      "method": "centralized",
+      "phase": "completed",
+      "jobid": "2269238",
+      "attempts": [
+        "2269238"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_centralized_s17.json",
+      "run": "runs/hpc4_core_v1/core_centralized_s17",
+      "method": "centralized",
+      "phase": "completed",
+      "jobid": "2269262",
+      "attempts": [
+        "2269262"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_centralized_s27.json",
+      "run": "runs/hpc4_core_v1/core_centralized_s27",
+      "method": "centralized",
+      "phase": "completed",
+      "jobid": "2269307",
+      "attempts": [
+        "2269307"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_fedavg_sample_s7.json",
+      "run": "runs/hpc4_core_v1/core_fedavg_sample_s7",
+      "method": "federated",
+      "phase": "completed",
+      "jobid": "2269449",
+      "attempts": [
+        "2269449"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_fedavg_sample_s17.json",
+      "run": "runs/hpc4_core_v1/core_fedavg_sample_s17",
+      "method": "federated",
+      "phase": "completed",
+      "jobid": "2269460",
+      "attempts": [
+        "2269460"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_fedavg_sample_s27.json",
+      "run": "runs/hpc4_core_v1/core_fedavg_sample_s27",
+      "method": "federated",
+      "phase": "completed",
+      "jobid": "2269469",
+      "attempts": [
+        "2269469"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_random_equal_s7.json",
+      "run": "runs/hpc4_core_v1/core_random_equal_s7",
+      "method": "federated",
+      "phase": "completed",
+      "jobid": "2269613",
+      "attempts": [
+        "2269613"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_random_equal_s17.json",
+      "run": "runs/hpc4_core_v1/core_random_equal_s17",
+      "method": "federated",
+      "phase": "completed",
+      "jobid": "2269709",
+      "attempts": [
+        "2269709"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_random_equal_s27.json",
+      "run": "runs/hpc4_core_v1/core_random_equal_s27",
+      "method": "federated",
+      "phase": "completed",
+      "jobid": "2269855",
+      "attempts": [
+        "2269855"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_fastest_equal_s7.json",
+      "run": "runs/hpc4_core_v1/core_fastest_equal_s7",
+      "method": "federated",
+      "phase": "completed",
+      "jobid": "2269879",
+      "attempts": [
+        "2269879"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_fastest_equal_s17.json",
+      "run": "runs/hpc4_core_v1/core_fastest_equal_s17",
+      "method": "federated",
+      "phase": "completed",
+      "jobid": "2269921",
+      "attempts": [
+        "2269921"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_fastest_equal_s27.json",
+      "run": "runs/hpc4_core_v1/core_fastest_equal_s27",
+      "method": "federated",
+      "phase": "completed",
+      "jobid": "2270303",
+      "attempts": [
+        "2270303"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_coverage_equal_s7.json",
+      "run": "runs/hpc4_core_v1/core_coverage_equal_s7",
+      "method": "federated",
+      "phase": "completed",
+      "jobid": "2270329",
+      "attempts": [
+        "2270329"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_coverage_equal_s17.json",
+      "run": "runs/hpc4_core_v1/core_coverage_equal_s17",
+      "method": "federated",
+      "phase": "completed",
+      "jobid": "2270408",
+      "attempts": [
+        "2270408"
+      ]
+    },
+    {
+      "config": "reports/plans/hpc4_core_v1/core_coverage_equal_s27.json",
+      "run": "runs/hpc4_core_v1/core_coverage_equal_s27",
+      "method": "federated",
+      "phase": "completed",
+      "jobid": "2270416",
+      "attempts": [
+        "2270416"
+      ]
+    }
+  ]
+}

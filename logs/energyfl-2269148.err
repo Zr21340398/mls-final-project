@@ -1,0 +1,22 @@
+
+You are using non-default spack instances.
+Please do not mix packages installed from different spack instances.
+
+This script will unload all other spack instances and modules automatically.
+
+==> Checking spack config and cache paths
+
+
+    Spack instance root: /opt/shared/.spack-edge
+    Shared apps and modules: /opt/shared/.spack-edge/dist
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Your spack config: /home/rzhoubf/.spack-edge
+    Your spack apps: /home/rzhoubf/.spack-edge
+    Tmpdir (TMPDIR and TMP): /tmp/user-10664
+
+==> Activating spack instance [edge] with no confirm
+==> Setting up spack [edge] environment
+==> Spack [edge] environment is ready
+
+    Please kindly send bug reports or suggestions to kftse   (kftse@ust.hk)
+

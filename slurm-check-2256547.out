@@ -1,0 +1,54 @@
+
+You are using non-default spack instances.
+Please do not mix packages installed from different spack instances.
+
+This script will unload all other spack instances and modules automatically.
+
+==> Checking spack config and cache paths
+
+
+    Spack instance root: /opt/shared/.spack-edge
+    Shared apps and modules: /opt/shared/.spack-edge/dist
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Your spack config: /home/rzhoubf/.spack-edge
+    Your spack apps: /home/rzhoubf/.spack-edge
+    Tmpdir (TMPDIR and TMP): /tmp/user-10664
+
+==> Activating spack instance [edge] with no confirm
+==> Setting up spack [edge] environment
+==> Spack [edge] environment is ready
+
+    Please kindly send bug reports or suggestions to kftse   (kftse@ust.hk)
+
+Job 2256547 on gpu16
+Wed Nov 11 00:36:46 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.211.01             Driver Version: 570.211.01     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L20                     On  |   00000000:63:00.0 Off |                    0 |
+| N/A   31C    P8             35W /  350W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Dataset: data/processed/lcl_60 households: 60 fingerprint: 9e4d51f60b85f8ad6faf3e2e779de7c122e994f1bb2a5ffe839d27f9caa8c7a4 synthetic: False
+PyTorch: 2.8.0+cu126 CUDA build: 12.6
+GPU: NVIDIA L20
+CUDA computation completed: (512, 512)
+{
+  "config": "configs/l20.hpc4_v1.json",
+  "report": "reports/hpc4_setup_v1/profile.json",
+  "reference_step_s": 0.0015988961502443999,
+  "reused": false
+}
+GPU checks and node calibration complete.

@@ -1,0 +1,65 @@
+2026-11-12T06:45:12.397792+00:00 Controller started
+2026-11-12T06:45:12.411518+00:00 1/21 submitting runs/hpc4_core_v1/core_seasonal_s7, resume=False
+2026-11-12T06:45:12.573091+00:00 1/21 submitted job=2268937
+2026-11-12T06:46:12.709686+00:00 1/21 completed job=2268937 run_status=complete
+2026-11-12T06:46:12.721690+00:00 2/21 submitting runs/hpc4_core_v1/core_seasonal_s17, resume=False
+2026-11-12T06:46:12.921877+00:00 2/21 submitted job=2268941
+2026-11-12T06:47:13.057483+00:00 2/21 completed job=2268941 run_status=complete
+2026-11-12T06:47:13.067045+00:00 3/21 submitting runs/hpc4_core_v1/core_seasonal_s27, resume=False
+2026-11-12T06:47:13.232094+00:00 3/21 submitted job=2268943
+2026-11-12T06:48:13.361301+00:00 3/21 completed job=2268943 run_status=complete
+2026-11-12T06:48:13.371640+00:00 4/21 submitting runs/hpc4_core_v1/core_local_s7, resume=False
+2026-11-12T06:48:13.529318+00:00 4/21 submitted job=2268947
+2026-11-12T06:53:13.718978+00:00 4/21 completed job=2268947 run_status=complete
+2026-11-12T06:53:13.727506+00:00 5/21 submitting runs/hpc4_core_v1/core_local_s17, resume=False
+2026-11-12T06:53:13.881296+00:00 5/21 submitted job=2268976
+2026-11-12T07:20:14.458113+00:00 5/21 completed job=2268976 run_status=complete
+2026-11-12T07:20:14.465743+00:00 6/21 submitting runs/hpc4_core_v1/core_local_s27, resume=False
+2026-11-12T07:20:14.681074+00:00 6/21 submitted job=2269148
+2026-11-12T07:33:14.999443+00:00 6/21 completed job=2269148 run_status=complete
+2026-11-12T07:33:15.007053+00:00 7/21 submitting runs/hpc4_core_v1/core_centralized_s7, resume=False
+2026-11-12T07:33:15.172661+00:00 7/21 submitted job=2269238
+2026-11-12T07:35:15.321295+00:00 7/21 completed job=2269238 run_status=complete
+2026-11-12T07:35:15.331000+00:00 8/21 submitting runs/hpc4_core_v1/core_centralized_s17, resume=False
+2026-11-12T07:35:15.484976+00:00 8/21 submitted job=2269262
+2026-11-12T07:41:15.759245+00:00 8/21 completed job=2269262 run_status=complete
+2026-11-12T07:41:15.766463+00:00 9/21 submitting runs/hpc4_core_v1/core_centralized_s27, resume=False
+2026-11-12T07:41:16.235975+00:00 9/21 submitted job=2269307
+2026-11-12T07:54:16.584487+00:00 9/21 completed job=2269307 run_status=complete
+2026-11-12T07:54:16.592280+00:00 10/21 submitting runs/hpc4_core_v1/core_fedavg_sample_s7, resume=False
+2026-11-12T07:54:16.763688+00:00 10/21 submitted job=2269449
+2026-11-12T07:56:16.905856+00:00 10/21 completed job=2269449 run_status=complete
+2026-11-12T07:56:16.915396+00:00 11/21 submitting runs/hpc4_core_v1/core_fedavg_sample_s17, resume=False
+2026-11-12T07:56:17.054807+00:00 11/21 submitted job=2269460
+2026-11-12T07:58:17.195440+00:00 11/21 completed job=2269460 run_status=complete
+2026-11-12T07:58:17.202150+00:00 12/21 submitting runs/hpc4_core_v1/core_fedavg_sample_s27, resume=False
+2026-11-12T07:58:17.349605+00:00 12/21 submitted job=2269469
+2026-11-12T08:14:17.815247+00:00 12/21 completed job=2269469 run_status=complete
+2026-11-12T08:14:17.826310+00:00 13/21 submitting runs/hpc4_core_v1/core_random_equal_s7, resume=False
+2026-11-12T08:14:18.084904+00:00 13/21 submitted job=2269613
+2026-11-12T08:27:18.389574+00:00 13/21 completed job=2269613 run_status=complete
+2026-11-12T08:27:18.398341+00:00 14/21 submitting runs/hpc4_core_v1/core_random_equal_s17, resume=False
+2026-11-12T08:27:18.653821+00:00 14/21 submitted job=2269709
+2026-11-12T08:48:19.214969+00:00 14/21 completed job=2269709 run_status=complete
+2026-11-12T08:48:19.224846+00:00 15/21 submitting runs/hpc4_core_v1/core_random_equal_s27, resume=False
+2026-11-12T08:48:19.387062+00:00 15/21 submitted job=2269855
+2026-11-12T08:50:19.528017+00:00 15/21 completed job=2269855 run_status=complete
+2026-11-12T08:50:19.535741+00:00 16/21 submitting runs/hpc4_core_v1/core_fastest_equal_s7, resume=False
+2026-11-12T08:50:19.720910+00:00 16/21 submitted job=2269879
+2026-11-12T08:54:19.895194+00:00 16/21 completed job=2269879 run_status=complete
+2026-11-12T08:54:19.902669+00:00 17/21 submitting runs/hpc4_core_v1/core_fastest_equal_s17, resume=False
+2026-11-12T08:54:20.051405+00:00 17/21 submitted job=2269921
+2026-11-12T09:32:20.805683+00:00 17/21 completed job=2269921 run_status=complete
+2026-11-12T09:32:20.813911+00:00 18/21 submitting runs/hpc4_core_v1/core_fastest_equal_s27, resume=False
+2026-11-12T09:32:21.017711+00:00 18/21 submitted job=2270303
+2026-11-12T09:34:21.174728+00:00 18/21 completed job=2270303 run_status=complete
+2026-11-12T09:34:21.188610+00:00 19/21 submitting runs/hpc4_core_v1/core_coverage_equal_s7, resume=False
+2026-11-12T09:34:21.384762+00:00 19/21 submitted job=2270329
+2026-11-12T09:46:21.677951+00:00 19/21 completed job=2270329 run_status=complete
+2026-11-12T09:46:21.686158+00:00 20/21 submitting runs/hpc4_core_v1/core_coverage_equal_s17, resume=False
+2026-11-12T09:46:21.899718+00:00 20/21 submitted job=2270408
+2026-11-12T09:48:22.041978+00:00 20/21 completed job=2270408 run_status=complete
+2026-11-12T09:48:22.048948+00:00 21/21 submitting runs/hpc4_core_v1/core_coverage_equal_s27, resume=False
+2026-11-12T09:48:22.245408+00:00 21/21 submitted job=2270416
+2026-11-12T10:36:23.247219+00:00 21/21 completed job=2270416 run_status=complete
+2026-11-12T10:36:23.249501+00:00 All planned jobs completed

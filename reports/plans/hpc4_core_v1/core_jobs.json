@@ -1,0 +1,107 @@
+[
+  {
+    "config": "reports/plans/hpc4_core_v1/core_seasonal_s7.json",
+    "run": "runs/hpc4_core_v1/core_seasonal_s7",
+    "method": "seasonal"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_seasonal_s17.json",
+    "run": "runs/hpc4_core_v1/core_seasonal_s17",
+    "method": "seasonal"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_seasonal_s27.json",
+    "run": "runs/hpc4_core_v1/core_seasonal_s27",
+    "method": "seasonal"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_local_s7.json",
+    "run": "runs/hpc4_core_v1/core_local_s7",
+    "method": "local"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_local_s17.json",
+    "run": "runs/hpc4_core_v1/core_local_s17",
+    "method": "local"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_local_s27.json",
+    "run": "runs/hpc4_core_v1/core_local_s27",
+    "method": "local"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_centralized_s7.json",
+    "run": "runs/hpc4_core_v1/core_centralized_s7",
+    "method": "centralized"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_centralized_s17.json",
+    "run": "runs/hpc4_core_v1/core_centralized_s17",
+    "method": "centralized"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_centralized_s27.json",
+    "run": "runs/hpc4_core_v1/core_centralized_s27",
+    "method": "centralized"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_fedavg_sample_s7.json",
+    "run": "runs/hpc4_core_v1/core_fedavg_sample_s7",
+    "method": "federated"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_fedavg_sample_s17.json",
+    "run": "runs/hpc4_core_v1/core_fedavg_sample_s17",
+    "method": "federated"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_fedavg_sample_s27.json",
+    "run": "runs/hpc4_core_v1/core_fedavg_sample_s27",
+    "method": "federated"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_random_equal_s7.json",
+    "run": "runs/hpc4_core_v1/core_random_equal_s7",
+    "method": "federated"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_random_equal_s17.json",
+    "run": "runs/hpc4_core_v1/core_random_equal_s17",
+    "method": "federated"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_random_equal_s27.json",
+    "run": "runs/hpc4_core_v1/core_random_equal_s27",
+    "method": "federated"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_fastest_equal_s7.json",
+    "run": "runs/hpc4_core_v1/core_fastest_equal_s7",
+    "method": "federated"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_fastest_equal_s17.json",
+    "run": "runs/hpc4_core_v1/core_fastest_equal_s17",
+    "method": "federated"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_fastest_equal_s27.json",
+    "run": "runs/hpc4_core_v1/core_fastest_equal_s27",
+    "method": "federated"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_coverage_equal_s7.json",
+    "run": "runs/hpc4_core_v1/core_coverage_equal_s7",
+    "method": "federated"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_coverage_equal_s17.json",
+    "run": "runs/hpc4_core_v1/core_coverage_equal_s17",
+    "method": "federated"
+  },
+  {
+    "config": "reports/plans/hpc4_core_v1/core_coverage_equal_s27.json",
+    "run": "runs/hpc4_core_v1/core_coverage_equal_s27",
+    "method": "federated"
+  }
+]
