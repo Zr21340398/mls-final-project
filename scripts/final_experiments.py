@@ -127,7 +127,7 @@ def run_tests(args):
             print(f'Skip previously completed matching test: {run}', flush=True)
             continue
         print(f'Testing {run}, {e["policy"]} round {e["round"]}', flush=True)
-        result = test_run(run, checkpoint=e['policy'], data_path=args.data)
+        result = test_run(run, checkpoint=e['policy'])
         if result['checkpoint_sha256'] != e['checkpoint_sha256']:
             raise RuntimeError(f'Tested checkpoint differs from frozen plan: {run}')
     print('All selected tests completed; use summarize-tests to aggregate them.')
@@ -215,7 +215,7 @@ def main():
     a.add_argument('--jobs', required=True); a.add_argument('--out', required=True)
     a.add_argument('--runs', nargs='+'); a.set_defaults(func=prepare_tests)
     a = sub.add_parser('run-tests')
-    a.add_argument('--plan', required=True); a.add_argument('--data')
+    a.add_argument('--plan', required=True)
     a.add_argument('--confirm-frozen', action='store_true'); a.set_defaults(func=run_tests)
     a = sub.add_parser('summarize-tests')
     a.add_argument('--plan', required=True); a.add_argument('--out', required=True)

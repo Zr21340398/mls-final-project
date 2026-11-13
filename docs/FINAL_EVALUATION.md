@@ -1,12 +1,127 @@
 # 模型压缩、虚拟设备分配与独立测试
 
-本文针对已完成的 `hpc4_core_v1` 实验。通过真实 CPU 测量 FP32/INT8 大小、推理延迟和验证误差，再根据预设的虚拟设备资源模型选择变体。独立测试另设冻结步骤。执行前把本指南、`scripts/final_experiments.py`、`scripts/hpc4_final_cpu.sbatch` 和 `scripts/hpc4_final_test.sbatch` 同步到服务器；确认数据、run、checkpoint、`hpc/env.sh` 和 core 计划仍在服务器原位置。
+本文面向刚在 HPC4 clone 项目、准备接手实验的同学。项目已有 21 次 `hpc4_core_v1` 训练记录；本指南从检查仓库、建立自己的环境和准备相同数据开始，继续进行 CPU 模型压缩、虚拟设备分配及冻结后的独立测试。已完成的训练不需要重跑。
 
 以下在服务器 Bash 的项目根目录执行。账户 `mscaiehpc42026`、CPU 分区 `amd` 和 GPU 分区 `gpu-l20` 按实际授权调整。批处理脚本默认每个作业 4 CPU、16 GB 内存、2 小时；测试脚本另申请 1 张 GPU。可在 `sbatch` 命令中加 `--time=HH:MM:SS` 覆盖，具体时限依据节点配额与运行情况调整。
 
+## 0. 新同学首次准备
+
+下面区分 **登录节点** 与 **CPU 计算节点**。请先和项目同学确认共享数据的位置、读取权限、最终测试方案以及你可以使用的 Slurm 账户。示例工作目录为 `~/projects/mls-final-project`，如果 clone 在其他位置，使用自己的实际路径。
+
+### 0.1 检查 clone 版本和现有实验
+
+登录节点：
+
+```bash
+cd ~/projects/mls-final-project
+git status --short
+git log -1 --oneline
+ls scripts/final_experiments.py scripts/hpc4_final_cpu.sbatch scripts/hpc4_final_test.sbatch
+ls reports/plans/hpc4_core_v1/core_jobs.json
+ls runs/hpc4_core_v1/core_coverage_equal_s7/rounds/0100/checkpoint.pt
+```
+
+检查实验脚本是否可以运行并显示压缩操作参数：
+
+```bash
+python3 scripts/final_experiments.py compress --help
+```
+
+如果脚本或 core 记录缺失，联系项目同学先推送最新版，再在**本地改动已经备份且允许更新**时执行 `git pull --ff-only`。如果 pull 提示会覆盖改动或无法快进，先保存现场并和项目同学协调；不要用强制重置。仓库中保存 core 的 run、配置、模型 checkpoint 和日志；原始和处理后数据位于 Git 忽略目录，需要按 0.3 获取。
+
+这次交接更新调整了压缩和测试的数据路径解析。已经完成的 core 模型可按本指南评估；旧训练 run 如果需要续训，须使用其原始源码版本并通过原有源码哈希校验。后续新训练使用单独的 run 目录。
+
+### 0.2 申请 CPU 节点并配置自己的环境
+
+登录节点单独执行，等待 CPU 计算节点分配：
+
+```bash
+srun --account=mscaiehpc42026 --partition=amd --nodes=1 --ntasks=1 --cpus-per-task=4 --mem=16G --time=02:00:00 --pty bash
+```
+
+在分配到的 CPU 节点建立独立 Linux 环境。参考原实验环境中的模块和 CUDA 版 PyTorch；模块名应与该服务器当前可用版本一致：
+
+```bash
+cd ~/projects/mls-final-project
+source /opt/shared/.spack-edge/dist/bin/setup-env.sh -y
+module spider python
+module load python/3.12.9-3lxwd5b
+python --version
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cu126
+python -m pip install -r requirements.txt
+python -m pip check
+```
+
+如果 `module spider` 显示的模块名不同，请选兼容 Python 3.12 的实际模块，并把后续环境脚本中的模块名同步改好。已有可用 `.venv` 时直接使用它，避免覆盖。原环境记录可在 `reports/hpc4_setup_v1/environment.freeze.txt` 查看；选择不同版本应记录原因和 `pip freeze`。网络访问或 CUDA wheel 安装失败时，先按学校网络及模块说明排查。
+
+仓库的 `hpc/env.sh` 已作为作业环境入口。先检查：
+
+```bash
+cat hpc/env.sh
+source hpc/env.sh
+which python
+python -c 'import torch; print(torch.__version__, torch.version.cuda)'
+```
+
+`hpc/env.sh` 中加载的模块应与你刚安装时一致，并以项目根目录为基准激活自己的 `.venv`；如需修改，先保留原内容并只在自己的工作副本调整。CPU 节点上看到 CUDA 不可用是正常的；GPU 测试需要 GPU 作业中再次检查。每次重新连接后，作业脚本会各自在计算节点加载该文件，无需重建环境。
+
+### 0.3 获取与 21 次 core 相同的处理后数据
+
+**重要：**压缩与最终测试必须使用原 run 保存的数据指纹对应的同一份处理后数据。原数据未提交 Git；只重新下载公开原始数据并不保证重新生成的 manifest 指纹一致。优先从原实验同学处获得完整的 `data/processed/lcl_60` 目录，包含 `manifest.json` 和所有家庭数据文件；通过双方有权访问的共享目录或经过约定的文件传输复制。无需上传原始数据到 Git，也无需修改原 run 的 metadata。
+
+若你已经获得原目录的只读权限，可在**自己的 CPU 计算节点终端**参考以下方式复制。先把 `DATA_SOURCE` 改成同学提供且可读取的真实目录；该路径只是示例，访问权限需要事先确认：
+
+```bash
+cd ~/projects/mls-final-project
+DATA_SOURCE=/home/rzhoubf/projects/mls-final-project/data/processed/lcl_60
+# 目标目录已有内容时先停下检查，避免覆盖。
+if [ -e data/processed/lcl_60 ]; then echo '目标目录已存在，请检查后再操作'; else
+  test -r "$DATA_SOURCE/manifest.json" && mkdir -p data/processed/lcl_60 && \
+  rsync -a -- "$DATA_SOURCE/" data/processed/lcl_60/
+fi
+```
+
+如果无法读取 `DATA_SOURCE`，请项目同学通过双方有权访问的存储提供副本，再放到自己的 `data/processed/lcl_60/`。不要修改别人主目录的权限或覆盖原数据。复制完成后，仍在 CPU 节点加载环境并校验全部家庭文件及 21 次 run 的数据指纹：
+
+```bash
+cd ~/projects/mls-final-project
+source hpc/env.sh
+python - <<'PY'
+import json
+from pathlib import Path
+from energyfl.data import load_dataset
+
+manifest, households = load_dataset('data/processed/lcl_60')
+jobs = json.loads(Path('reports/plans/hpc4_core_v1/core_jobs.json').read_text())
+fingerprints = {json.loads((Path(j['run']) / 'metadata.json').read_text())['dataset_fingerprint'] for j in jobs}
+print('已检查家庭数:', len(households), '数据指纹:', manifest['fingerprint'])
+print('run 数:', len(jobs), 'run 数据指纹:', fingerprints)
+assert len(households) == 60 and not manifest['synthetic']
+assert len(jobs) == 21 and fingerprints == {manifest['fingerprint']}, '数据版本不一致，请联系原实验同学'
+print('数据和 run 指纹一致')
+PY
+```
+
+这会读取处理后数组并验证文件哈希，不会运行测试集评估。如果校验失败，停止后续步骤并取得正确的数据副本。压缩和测试默认读取 run 配置中的 `data/processed/lcl_60`，从自己的项目根目录解析；每次实际加载仍会复核指纹和家庭文件哈希。无需重新在 GPU 上校准旧模型；校准报告是原训练的历史记录。
+
+### 0.4 返回登录节点并确认作业脚本
+
+CPU 节点准备完成后执行 `exit`，回到登录节点；再进入项目目录：
+
+```bash
+cd ~/projects/mls-final-project
+bash -n scripts/hpc4_final_cpu.sbatch
+bash -n scripts/hpc4_final_test.sbatch
+```
+
+随后从第 1 节提交压缩作业。创建冻结测试清单和最终测试的命令分开执行；在团队确认最终方案前，先进行压缩与验证结果分析。每次提交 `sbatch` 都会分配自己的计算节点并在结束后释放。退出或断开 SSH 后已提交的作业继续排队或运行。
+
 ## 1. CPU 压缩与虚拟模型分配
 
-示例选择 coverage 的三个种子，使用验证集最佳 checkpoint；正式使用哪一种已有方法由你们在查看测试集之前确定。此操作使用验证集，读取 run 记录中的数据目录，不运行独立测试。
+示例选择 coverage 的三个种子，使用验证集最佳 checkpoint；正式使用哪一种已有方法由你们在查看测试集之前确定。此操作使用验证集，自动读取项目目录下已校验的数据，不运行独立测试。
 
 登录节点：
 
@@ -84,7 +199,7 @@ tail -n 80 slurm-final-test-JOBID.out
 
 每次测试前会再次校验冻结配置、最新 checkpoint 和选中 checkpoint 的哈希。若有已经完成且与清单一致的测试，程序会保留并跳过；因此同一作业超时后，可确认旧作业结束后重新提交相同命令，从未完成的 run 继续。若发现 `.test-pending`，先核查日志与目录；程序会停止并保留现场，避免静默覆盖。已完成结果与清单不一致时也会停止，不能借此更换 checkpoint 反复试测。
 
-当数据复制到新路径时，确保 manifest 指纹与冻结清单一致，并在上述 `run-tests` 命令末尾添加 `--data 新路径`。压缩命令当前读取 run 原始 metadata 中的数据路径，需要在原路径访问数据。
+压缩和测试从项目根目录读取 run 配置中的相对数据路径 `data/processed/lcl_60`，无需指定额外路径参数；程序会检查 manifest 与原 run 的数据指纹。
 
 ## 4. 汇总与留存
 

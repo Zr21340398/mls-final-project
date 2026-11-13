@@ -1,14 +1,17 @@
 import copy
 import importlib.util
 import json
+import os
 from pathlib import Path
 import tempfile
 import unittest
+from contextlib import contextmanager
 from types import SimpleNamespace
 
 from energyfl.common import read_json, write_json
 from energyfl.data import synthetic, prepare
 from energyfl.engine import run_training
+from energyfl.profile import compression
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('final_experiments', ROOT / 'scripts/final_experiments.py')
@@ -16,21 +19,34 @@ workflow = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(workflow)
 
 
+@contextmanager
+def working_directory(path):
+    previous = Path.cwd()
+    os.chdir(path)
+    try:
+        yield
+    finally:
+        os.chdir(previous)
+
+
 class FinalExperimentsTests(unittest.TestCase):
     def test_frozen_plan_test_once_and_compression(self):
-        with tempfile.TemporaryDirectory() as folder:
+        with tempfile.TemporaryDirectory() as folder, working_directory(folder):
             root = Path(folder)
             raw, data = root / 'raw.csv', root / 'data'
             synthetic(raw, clients=4, days=14)
             prepare([raw], data, '2013-01-01', '2013-01-15', 4)
             cfg = copy.deepcopy(read_json(ROOT / 'configs/smoke.json'))
-            cfg['data'] = str(data)
+            cfg['data'] = 'data'
             cfg['model']['hidden'] = 4
             cfg['train'].update(rounds=2, local_steps=1, batch_size=8, threads=1)
             cfg['simulation'].update(dropout=0.0, availability=1.0)
             config, run = root / 'config.json', root / 'run'
             write_json(config, cfg)
             run_training(config, run)
+            metadata = read_json(run / 'metadata.json')
+            metadata['dataset_path'] = str(root / 'old-account-data')
+            write_json(run / 'metadata.json', metadata)
             jobs, plan = root / 'jobs.json', root / 'plan.json'
             write_json(jobs, [{'config': str(config), 'run': str(run)}])
             workflow.prepare_tests(SimpleNamespace(jobs=jobs, out=plan, runs=None))
@@ -39,7 +55,20 @@ class FinalExperimentsTests(unittest.TestCase):
                 workflow.run_tests(SimpleNamespace(plan=plan, data=None, confirm_frozen=False))
             # The compression workflow uses validation data and never creates test output.
             out = root / 'compression'
+            # The original metadata path is unavailable in this checkout.
             workflow.compress(SimpleNamespace(jobs=jobs, runs=['run'], out=out, repeats=10, tolerance=0.05))
+            other_raw, other_data = root / 'other.csv', root / 'other_data'
+            synthetic(other_raw, clients=4, days=14, seed=42)
+            prepare([other_raw], other_data, '2013-01-01', '2013-01-15', 4)
+            saved = root / 'saved_data'
+            data.rename(saved)
+            other_data.rename(data)
+            try:
+                with self.assertRaisesRegex(ValueError, 'Dataset mismatch'):
+                    compression(run, root / 'wrong_compression', repeats=10)
+            finally:
+                data.rename(other_data)
+                saved.rename(data)
             self.assertTrue((out / 'variants.csv').is_file())
             self.assertTrue((out / 'assignments.csv').is_file())
             self.assertFalse((run / 'test').exists())

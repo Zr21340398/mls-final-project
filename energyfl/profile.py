@@ -178,7 +178,12 @@ def compression(run_dir, out, repeats=100, tolerance=0.05):
     c = load_config(run / "config.json")
     if c["train"]["method"] in ["local", "seasonal"]:
         raise ValueError("Compression needs a shared neural model")
-    m, hs = load_dataset(read_json(run / "metadata.json")["dataset_path"])
+    metadata = read_json(run / "metadata.json")
+    # Resolve the run configuration's project-relative data path in the
+    # current checkout, so another collaborator can use the same dataset.
+    m, hs = load_dataset(c["data"])
+    if m["fingerprint"] != metadata["dataset_fingerprint"]:
+        raise ValueError("Dataset mismatch")
     setup(c["seed"], "cpu", c["train"]["threads"])
     rs = committed(run)
     if not rs:

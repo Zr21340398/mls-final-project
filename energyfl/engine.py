@@ -364,7 +364,9 @@ def test_run(run_dir, checkpoint="best", data_path=None):
         raise ValueError(
             "Finish training or exhaust the declared privacy budget before testing"
         )
-    m, hs = load_dataset(data_path or read_json(run / "metadata.json")["dataset_path"])
+    # Prefer the project-relative path saved in the configuration; --data is
+    # retained for existing users who explicitly relocate their data elsewhere.
+    m, hs = load_dataset(data_path or c["data"])
     if m["fingerprint"] != read_json(run / "metadata.json")["dataset_fingerprint"]:
         raise ValueError("Dataset mismatch")
     if (run / "test").exists():
