@@ -124,7 +124,7 @@ bash -n scripts/hpc4_final_test.sbatch
 示例选择 coverage 的三个种子，使用验证集最佳 checkpoint；正式使用哪一种已有方法由你们在查看测试集之前确定。此操作使用验证集，自动读取项目目录下已校验的数据，不运行独立测试。
 
 登录节点：
-
+       
 ```bash
 cd ~/projects/mls-final-project
 bash -n scripts/hpc4_final_cpu.sbatch
