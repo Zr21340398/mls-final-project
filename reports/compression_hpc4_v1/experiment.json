@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "created_utc": "2026-11-13T11:12:40.461137+00:00",
+  "source_jobs_sha256": "5aefd0c67f4fc40401dacedcd9ad7b7197ce1e9d26f36f3b1ad96e5a32b4e72f",
+  "repeats": 100,
+  "tolerance": 0.05,
+  "checkpoint_policy": "best validation checkpoint",
+  "runs": [
+    {
+      "run": "runs/hpc4_core_v1/core_coverage_equal_s7",
+      "seed": 7,
+      "method": "federated",
+      "scheduler": "coverage",
+      "weighting": "equal",
+      "dp": false,
+      "group": "521574cf5ef194e4",
+      "policy": "best",
+      "round": 63,
+      "checkpoint_sha256": "b99354bf8c438b6bd1fe513b1d1fb32f01884f01ba454dbea6d4feab114e8e2f",
+      "latest_round": 100,
+      "latest_checkpoint_sha256": "57e0217efe22cd8a02261b5513f6e5c6be5edf49312e0c1a6f323756bd3624ee",
+      "config_sha256": "8494934b7ff45ab389ec21a873c55c7149739e9631765cd473d382f49c2cccfc",
+      "dataset_fingerprint": "9e4d51f60b85f8ad6faf3e2e779de7c122e994f1bb2a5ffe839d27f9caa8c7a4"
+    },
+    {
+      "run": "runs/hpc4_core_v1/core_coverage_equal_s17",
+      "seed": 17,
+      "method": "federated",
+      "scheduler": "coverage",
+      "weighting": "equal",
+      "dp": false,
+      "group": "521574cf5ef194e4",
+      "policy": "best",
+      "round": 61,
+      "checkpoint_sha256": "d370d462f49feb6b31be26125f26f47f534a3ea8ffa5cd408afcaec73c81a757",
+      "latest_round": 100,
+      "latest_checkpoint_sha256": "4af36c3da3828a520c4b1eee95e5868850562c63baee0bd5167f48835220bc80",
+      "config_sha256": "089457c4d3f439b0242408a279ede038f7cce013f4954d038a8e312bf008f325",
+      "dataset_fingerprint": "9e4d51f60b85f8ad6faf3e2e779de7c122e994f1bb2a5ffe839d27f9caa8c7a4"
+    },
+    {
+      "run": "runs/hpc4_core_v1/core_coverage_equal_s27",
+      "seed": 27,
+      "method": "federated",
+      "scheduler": "coverage",
+      "weighting": "equal",
+      "dp": false,
+      "group": "521574cf5ef194e4",
+      "policy": "best",
+      "round": 75,
+      "checkpoint_sha256": "a102f7267cfa87cf61108ab7d31498bf02e4c6f8b30cdda382234fd7bba3ccd9",
+      "latest_round": 100,
+      "latest_checkpoint_sha256": "98a05bb6047cd9f431cab45cc30531785cb336b2e5f7b46d82e33a0cf0e3e51f",
+      "config_sha256": "88e2a5758d537e68c23cbc5a051150b32de10527009fb7688c2e12096e66d7c8",
+      "dataset_fingerprint": "9e4d51f60b85f8ad6faf3e2e779de7c122e994f1bb2a5ffe839d27f9caa8c7a4"
+    }
+  ],
+  "note": "CPU latency measured on this host; edge latency and memory feasibility are modeled."
+}

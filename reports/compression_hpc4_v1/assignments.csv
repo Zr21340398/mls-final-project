@@ -1,0 +1,10 @@
+﻿run,seed,profile,variant,modeled_p95_ms,note
+core_coverage_equal_s7,7,constrained,int8,5.18905,Serialized-size feasibility is a lower bound; runtime/framework memory must also be profiled before real deployment.
+core_coverage_equal_s7,7,intermediate,int8,2.594525,Serialized-size feasibility is a lower bound; runtime/framework memory must also be profiled before real deployment.
+core_coverage_equal_s7,7,capable,int8,1.2972625,Serialized-size feasibility is a lower bound; runtime/framework memory must also be profiled before real deployment.
+core_coverage_equal_s17,17,constrained,int8,5.212758,Serialized-size feasibility is a lower bound; runtime/framework memory must also be profiled before real deployment.
+core_coverage_equal_s17,17,intermediate,int8,2.606379,Serialized-size feasibility is a lower bound; runtime/framework memory must also be profiled before real deployment.
+core_coverage_equal_s17,17,capable,int8,1.3031895,Serialized-size feasibility is a lower bound; runtime/framework memory must also be profiled before real deployment.
+core_coverage_equal_s27,27,constrained,int8,5.2108638,Serialized-size feasibility is a lower bound; runtime/framework memory must also be profiled before real deployment.
+core_coverage_equal_s27,27,intermediate,int8,2.6054319,Serialized-size feasibility is a lower bound; runtime/framework memory must also be profiled before real deployment.
+core_coverage_equal_s27,27,capable,int8,1.30271595,Serialized-size feasibility is a lower bound; runtime/framework memory must also be profiled before real deployment.

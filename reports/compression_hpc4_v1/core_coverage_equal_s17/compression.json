@@ -1,0 +1,66 @@
+{
+  "environment": {
+    "python": "3.12.9 (main, Dec  2 2025, 09:07:03) [GCC 11.5.0]",
+    "platform": "Linux-5.14.0-687.64.1.el9_8.x86_64-x86_64-with-glibc2.34",
+    "numpy": "2.2.6",
+    "torch": "2.8.0+cu126",
+    "cuda_runtime": "12.6",
+    "cuda_available": false,
+    "gpu": null,
+    "command": [
+      "scripts/final_experiments.py",
+      "compress",
+      "--jobs",
+      "reports/plans/hpc4_core_v1/core_jobs.json",
+      "--out",
+      "reports/compression_hpc4_v1",
+      "--repeats",
+      "100",
+      "--tolerance",
+      "0.05",
+      "--runs",
+      "core_coverage_equal_s7",
+      "core_coverage_equal_s17",
+      "core_coverage_equal_s27"
+    ],
+    "pid": 3165577
+  },
+  "checkpoint_round": 61,
+  "variants": {
+    "fp32": {
+      "serialized_bytes": 18161,
+      "median_ms": 1.1211760000000002,
+      "p95_ms": 1.1268845,
+      "validation_mae_kwh": 0.18233609602326284
+    },
+    "int8": {
+      "serialized_bytes": 8227,
+      "median_ms": 1.2905820000000001,
+      "p95_ms": 1.3031895,
+      "validation_mae_kwh": 0.18242374018922144
+    }
+  },
+  "assignment": [
+    {
+      "profile": "constrained",
+      "variant": "int8",
+      "modeled_p95_ms": 5.212758,
+      "note": "Serialized-size feasibility is a lower bound; runtime/framework memory must also be profiled before real deployment."
+    },
+    {
+      "profile": "intermediate",
+      "variant": "int8",
+      "modeled_p95_ms": 2.606379,
+      "note": "Serialized-size feasibility is a lower bound; runtime/framework memory must also be profiled before real deployment."
+    },
+    {
+      "profile": "capable",
+      "variant": "int8",
+      "modeled_p95_ms": 1.3031895,
+      "note": "Serialized-size feasibility is a lower bound; runtime/framework memory must also be profiled before real deployment."
+    }
+  ],
+  "batch_size": 1,
+  "repeats": 100,
+  "relative_error_tolerance": 0.05
+}
